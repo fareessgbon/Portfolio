@@ -8,7 +8,6 @@ const projects = (await getCollection('work', ({ data }) => !data.draft)).sort((
 const first = (s) => s.split('. ')[0].replace(/\.$/, '') + '.';
 const coverFor = {
   'hush-jewels': '/photos/gold_hoops_jewelry_collection.jpg',
-  'overflow-pop-up-campaign': '/photos/instagram-campaign.png',
 };
 const P = projects.map((e) => ({ t: 'project', e }));
 const PH = explorePhotos.map((p, i) => ({ t: 'photo', p, i }));
