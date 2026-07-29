@@ -8,7 +8,6 @@ const projects = (await getCollection('work', ({ data }) => !data.draft)).sort((
 const first = (s) => s.split('. ')[0].replace(/\.$/, '') + '.';
 const coverFor = {
   'hush-jewels': '/photos/gold_hoops_jewelry_collection.jpg',
-  'overflow-pop-up-campaign': '/photos/instagram-campaign.png',
 };
 // Build an interleaved feed for a lively masonry. Home and Explore draw from
 // disjoint photo sets (see lib/gallery.js), so nothing repeats site-wide.
