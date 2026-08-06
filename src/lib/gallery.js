@@ -82,7 +82,7 @@ export const highlights = [
     id: 'hello', label: 'Contact',
     icon: '<rect x="4" y="6" width="16" height="12" rx="1.6"/><path d="m4 7.5 8 6 8-6"/>',
     slides: [
-      { theme: 'gold', kicker: 'Get in touch', title: 'Let’s talk.', body: 'Open to health information, data, and operations roles in biotech and health tech.', cta: { label: 'Copy my email', email: 'hello@fareess.ca' } },
+      { theme: 'gold', kicker: 'Get in touch', title: 'Let’s talk.', body: 'Open to health information, data, and operations roles in biotech and health tech.', cta: { label: 'Copy my email', email: 'fareess.gbon@gmail.com' } },
     ],
   },
 ];
