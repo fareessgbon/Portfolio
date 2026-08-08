@@ -1,0 +1,95 @@
+---
+title: "MIMIC-III Hospital Outcomes Dashboard"
+summary: "A Tableau dashboard built on the public MIMIC-III demo dataset, tracking admissions, mortality, length of stay, and diagnosis patterns across a 100-patient ICU cohort, with an explicit caveat about how much a sample that size can actually support."
+org: "Independent, personal project"
+role: "Data analyst"
+start: "2026-07"
+end: "2026-07"
+tags: [data, health]
+tools: [Tableau]
+kind: study
+featured: true
+order: 4
+outcomes:
+  - metric: "Cohort mortality rate"
+    value: "31.01%"
+    basis: "Computed by the dashboard across all 129 admissions in the MIMIC-III demo dataset; read directly from the dashboard's KPI tile, not independently re-audited."
+  - metric: "Average length of stay"
+    value: "9.3 days"
+    basis: "Computed by the dashboard across valid length-of-stay records in the same 100-patient, 129-admission cohort."
+---
+
+## Why MIMIC-III
+
+MIMIC-III is a widely used, deidentified critical-care database published
+through PhysioNet. Its 100-patient demo subset is the standard sandbox for
+practicing health-data analysis without needing credentialed access to the
+full dataset. I built this dashboard in Tableau as a personal exercise in
+descriptive clinical analytics — admissions, mortality, length of stay, and
+diagnosis patterns, the questions a hospital ops or quality team asks before
+any modeling starts.
+
+<Sidenote n={1}>The demo subset is a convenience sample built for teaching
+and code demos, not a representative hospital population. I kept that
+distinction visible on purpose — see the caveat below.</Sidenote>
+
+## What's on the dashboard
+
+Four KPI tiles anchor the top: total admissions, total patients, mortality
+rate, and average length of stay. Below them, five panels break the same
+cohort down by ethnicity, admission type, time, and diagnosis.
+
+<div class="project-gallery project-gallery--mimic">
+  <figure class="project-shot project-shot--wide">
+    <img
+      src="/photos/mimic-iii-hospital-outcomes/dashboard-overview.png"
+      alt="MIMIC-III Hospital Outcomes Dashboard in Tableau, showing four KPI tiles for admissions, patients, mortality rate, and length of stay, plus panels for mortality and length of stay by ethnicity, admissions over time, mortality by admission type, and top diagnoses"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Full dashboard: KPI row, ethnicity breakdowns, admissions over time, admission type, top diagnoses</figcaption>
+  </figure>
+</div>
+
+## Design decisions
+
+- **KPI row first.** Every panel below inherits that context — a 31%
+  mortality, 9.3-day-stay cohort — so no single segment gets read in
+  isolation from the whole.
+- **Ethnicity panels paired, not scattered.** Mortality by ethnicity sits
+  directly beside average length of stay by ethnicity, in the same category
+  order, so a viewer can cross-reference rate against duration for a given
+  group without holding two separate charts in their head.
+- **A line, not a bar, for admissions over time.** That panel exists to show
+  shape and volume across the year, not a month-by-month comparison, so a
+  continuous line reads faster than twelve individual bars.
+- **Sorted categorical bars everywhere else.** Ethnicity, admission type, and
+  diagnosis panels are all sorted by value rather than alphabetically, so the
+  largest driver is always the first thing a viewer sees.
+
+## The caveat I want stated plainly
+
+A 100-patient demo sample is small enough that several of these breakdowns
+shouldn't be read as findings. The Asian group has 2 admissions; the Black
+group has 7. A single-digit count can swing a mortality-rate bar dramatically
+without saying anything about the underlying population, and a clean chart
+shouldn't imply more confidence than 7 records can support. The 31% overall
+mortality rate is also far higher than any real hospital's actual rate —
+demo and teaching subsets like this one aren't built to be representative,
+and I'd flag that directly on the dashboard itself if this were headed
+anywhere beyond a portfolio.
+
+<Callout kind="finding">
+The most useful thing this project taught me wasn't a finding about ICU
+outcomes — it was a reminder to design the confidence level into the chart,
+not just the number. A bar with an n of 2 should look different from one
+with an n of 86, even when Tableau's default styling treats them the same.
+</Callout>
+
+## Where it goes next
+
+The honest next step is the full MIMIC-III database under proper credentialed
+PhysioNet access, with sample-size annotations built into every categorical
+panel instead of left to a caption, and a significance test behind any
+ethnicity comparison before it ships as a claim instead of a prompt for more
+data.
