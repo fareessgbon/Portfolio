@@ -7,13 +7,24 @@ import { explorePhotos, HEART } from '../../lib/gallery.js';
 const projects = (await getCollection('work', ({ data }) => !data.draft)).sort((a, b) => a.data.order - b.data.order);
 const first = (s) => s.split('. ')[0].replace(/\.$/, '') + '.';
 const coverFor = {
-  'hush-jewels': '/photos/gold_hoops_jewelry_collection.jpg',
+  'black-wings': '/photos/black-wings-cover.svg',
+  'brew-and-the-city': '/photos/brew-and-the-city-cover.svg',
+  'frozen-guessing-game': '/photos/frozen-guessing-game-cover.svg',
+  'glucose-monitoring': '/photos/glucose-monitoring-cover.svg',
+  'healoderm-influencer-marketing': '/photos/healoderm-cover.svg',
+  'hush-jewels': '/photos/hush-jewels-cover.svg',
+  'kerecis-clinical-courier': '/photos/kerecis-clinical-courier-cover.svg',
+  'overflow-pop-up-campaign': '/photos/overflow-pop-up-campaign-cover.svg',
+  'planted-souls': '/photos/planted-souls-cover.svg',
+  'wecs-community-ops': '/photos/wecs-community-ops-cover.svg',
 };
 const P = projects.map((e) => ({ t: 'project', e }));
 const PH = explorePhotos.map((p, i) => ({ t: 'photo', p, i }));
 const order = [
   P[0],
   P[1],
+  P[9],
+  P[10],
   PH[0],
   P[2],
   P[3],

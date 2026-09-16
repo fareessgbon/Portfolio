@@ -17,27 +17,41 @@ const art = artFor(entry);
 const d = entry.data;
 const dates = d.end ? `${d.start} → ${d.end}` : `${d.start} → now`;
 const links = Object.entries(d.links) as [string, string][];
+const fullBleed = entry.id === 'healoderm-influencer-marketing' || entry.id === 'brew-and-the-city' || entry.id === 'glucose-monitoring';
+const themeFor: Record<string, string> = {
+  'hush-jewels': 'theme-hush',
+  'kerecis-clinical-courier': 'theme-kerecis',
+  'planted-souls': 'theme-planted',
+  'black-wings': 'theme-blackwings',
+  'overflow-pop-up-campaign': 'theme-overflow',
+  'wecs-community-ops': 'theme-wecs',
+};
+const theme = themeFor[entry.id];
+const proseClass = [fullBleed ? '' : 'prose', theme].filter(Boolean).join(' ');
 ---
 
 <Base title={`${d.title} · Fareess`} description={d.summary}>
   <div class="wrap page">
-    <div id="study-visual" class="banner" set:html={art.svg} />
-    <article id="study-article" style="margin-top: 1.6rem">
+    <article id="study-article" style={fullBleed ? "margin-top: 1.6rem" : "margin-top: 1.6rem"}>
       <span class="mono eyebrow">Case study {String(i + 1).padStart(2, '0')} · seed {art.seed}</span>
-      <h1 class="big">{d.title}</h1>
-      <div class="pill-row" style="margin-top: 1.1rem">
-        <span class="pill"><span class="k">Role</span>{d.role}</span>
-        {d.org && <span class="pill"><span class="k">Where</span>{d.org}</span>}
-        <span class="pill"><span class="k">When</span>{dates}</span>
-        {d.tools.length > 0 && <span class="pill"><span class="k">Tools</span>{d.tools.join(', ')}</span>}
-        {links.map(([k, v]) => <a class="pill" href={v} target="_blank" rel="noopener"><span class="k">{k}</span>open ↗</a>)}
-      </div>
-      <p class="abstract">{d.summary}</p>
-      <div class="prose">
+      {!fullBleed && (
+        <>
+          <h1 class="big">{d.title}</h1>
+          <div class="pill-row" style="margin-top: 1.1rem">
+            <span class="pill"><span class="k">Role</span>{d.role}</span>
+            {d.org && <span class="pill"><span class="k">Where</span>{d.org}</span>}
+            <span class="pill"><span class="k">When</span>{dates}</span>
+            {d.tools.length > 0 && <span class="pill"><span class="k">Tools</span>{d.tools.join(', ')}</span>}
+            {links.map(([k, v]) => <a class="pill" href={v} target="_blank" rel="noopener"><span class="k">{k}</span>open ↗</a>)}
+          </div>
+          <p class="abstract">{d.summary}</p>
+        </>
+      )}
+      <div class={proseClass} style={fullBleed ? "margin-top: 1.4rem" : undefined}>
         <Content components={{ Figure, Sidenote, Stat, Callout }} />
       </div>
       {d.outcomes.length > 0 && (
-        <section class="prose" style="margin-top: 2.2rem">
+        <section class={proseClass} style="margin-top: 2.2rem">
           <h2>What actually happened</h2>
           {d.outcomes.map((o) => <Stat value={o.value} metric={o.metric} basis={o.basis} />)}
         </section>

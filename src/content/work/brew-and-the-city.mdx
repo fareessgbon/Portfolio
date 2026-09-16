@@ -1,0 +1,506 @@
+---
+title: "Brew and the City"
+summary: "A café discovery and loyalty app built end to end: a taste-matching quiz that scores cafés against a person instead of a category, a City Card stamp program partner cafés can actually run, and a self-audited security pass before a single pilot user touches it."
+org: "Independent, personal project"
+role: "Full-stack developer"
+start: "2026-08"
+tags: [code, ops]
+tools: [Next.js, TypeScript, Supabase, Postgres, Tailwind CSS, Mapbox, Vitest]
+links:
+  github: "https://github.com/fareessgbon/the-brew-and-the-city"
+kind: study
+featured: true
+order: 11
+---
+
+<div style="background:#f4efe4; background-image:radial-gradient(rgba(58,44,36,0.06) 1px, transparent 1px); background-size:3px 3px; color:#1a1a17; font-family:var(--sans); overflow-x:hidden; margin:0 -1px; border-radius:18px; border:1px solid rgba(107,107,99,0.22)">
+
+  <div style="max-width:1120px; margin:0 auto; padding:8px 24px 0">
+
+    <header style="display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,0.65fr); gap:48px; align-items:start; padding:48px 0 60px">
+      <div style="min-width:0">
+        <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">
+          <span style="border:1px solid rgba(107,107,99,0.3); border-radius:999px; padding:5px 10px">Café discovery</span>
+          <span style="border:1px solid rgba(107,107,99,0.3); border-radius:999px; padding:5px 10px">Loyalty program</span>
+          <span style="border:1px solid rgba(107,107,99,0.3); border-radius:999px; padding:5px 10px">Solo full-stack build</span>
+          <span style="color:#a8503f">2 items gate a real pilot</span>
+        </div>
+
+        <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#3a2c24; margin:26px 0 0">Brew &amp; the City</div>
+
+        <h1 style="margin:8px 0 0; line-height:1.05">
+          <span style="display:block; font-family:'Fraunces Variable',Georgia,serif; font-style:italic; font-weight:500; font-size:clamp(22px,3.4vw,32px); color:#9dbbd0; letter-spacing:-0.01em">Good coffee near me,</span>
+          <span style="display:block; font-family:'Fraunces Variable',Georgia,serif; font-weight:600; font-size:clamp(30px,5.4vw,52px); text-transform:uppercase; color:#3a2c24; letter-spacing:-0.01em; margin-top:2px; text-wrap:pretty">is the wrong question.</span>
+        </h1>
+
+        <p style="font-size:17px; line-height:1.6; color:#1a1a17; max-width:46ch; margin:20px 0 0; text-wrap:pretty">
+          A café discovery app that scores every room against a 7-dimension taste
+          profile, what you're there for, and how far you're willing to walk in a
+          Calgary winter, instead of a single star rating. Underneath it, a City
+          Card loyalty program that partner cafés run themselves, from their own
+          portal — receipts in, stamps out.
+        </p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:40px; margin:40px 0 0; padding-top:24px; border-top:1px dashed rgba(107,107,99,0.35)">
+          <div>
+            <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">Role</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:18px; margin-top:6px; color:#3a2c24">Solo, full-stack</div>
+          </div>
+          <div>
+            <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">Surface</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:18px; margin-top:6px; color:#3a2c24">Web app, café portal, admin</div>
+          </div>
+          <div>
+            <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">Stage</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:18px; margin-top:6px; color:#3a2c24">Security-audited, pre-pilot</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="min-width:0; display:flex; justify-content:center; padding-top:14px">
+        <div style="position:relative; width:100%; max-width:246px; transform:rotate(2.4deg)">
+          <div style="position:absolute; left:50%; top:-13px; margin-left:-9px; width:18px; height:18px; border-radius:999px; background:radial-gradient(circle at 32% 28%, #e8c4c0, #3a2c24 72%); box-shadow:0 7px 12px rgba(36,26,21,0.3); z-index:2"></div>
+          <div style="filter:drop-shadow(10px 16px 18px rgba(36,26,21,0.18))">
+            <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:18px; padding:26px 22px 22px; position:relative; overflow:hidden">
+              <div style="text-align:center; font-family:var(--mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Your City Card</div>
+              <div style="text-align:center; font-family:'Fraunces Variable',Georgia,serif; font-weight:600; font-size:15px; color:#3a2c24; margin-top:2px">Brew &amp; the City</div>
+
+              <div style="display:flex; justify-content:center; gap:8px; margin-top:18px">
+                <span style="width:30px; height:30px; border-radius:999px; background:#3a2c24; color:#f4efe4; display:flex; align-items:center; justify-content:center; transform:rotate(-3deg)">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M5 8h13l-1.15 9.3A2 2 0 0 1 14.87 19H9.13a2 2 0 0 1-1.98-1.7L5 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 9.6c1.9.25 2.8 1.4 2.8 2.9s-1.35 2.8-3.1 2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <span style="width:30px; height:30px; border-radius:999px; background:#3a2c24; color:#f4efe4; display:flex; align-items:center; justify-content:center; transform:rotate(2deg)">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M5 8h13l-1.15 9.3A2 2 0 0 1 14.87 19H9.13a2 2 0 0 1-1.98-1.7L5 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 9.6c1.9.25 2.8 1.4 2.8 2.9s-1.35 2.8-3.1 2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <span style="width:30px; height:30px; border-radius:999px; background:#3a2c24; color:#f4efe4; display:flex; align-items:center; justify-content:center; transform:rotate(-2deg)">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M5 8h13l-1.15 9.3A2 2 0 0 1 14.87 19H9.13a2 2 0 0 1-1.98-1.7L5 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 9.6c1.9.25 2.8 1.4 2.8 2.9s-1.35 2.8-3.1 2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <span style="width:30px; height:30px; border-radius:999px; background:#3a2c24; color:#f4efe4; display:flex; align-items:center; justify-content:center; transform:rotate(3deg)">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M5 8h13l-1.15 9.3A2 2 0 0 1 14.87 19H9.13a2 2 0 0 1-1.98-1.7L5 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 9.6c1.9.25 2.8 1.4 2.8 2.9s-1.35 2.8-3.1 2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <span style="width:30px; height:30px; border-radius:999px; border:1.5px dashed #9dbbd0; color:#9dbbd0; display:flex; align-items:center; justify-content:center; background-image:repeating-linear-gradient(45deg, #c6d8e6 0 5px, #f4efe4 5px 10px)">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M12 2.5 14.4 9l6.6 2.5-6.6 2.5L12 20.5 9.6 14 3 11.5 9.6 9 12 2.5Z"/></svg>
+                </span>
+              </div>
+              <div style="text-align:center; font-family:var(--mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:#9dbbd0; margin-top:10px">4 of 5 · one to go</div>
+
+              <div style="position:relative; height:1px; margin:18px -22px 16px; border-top:1.5px dashed rgba(107,107,99,0.32)">
+                <span style="position:absolute; top:-9px; left:-9px; width:18px; height:18px; border-radius:999px; background:#f4efe4"></span>
+                <span style="position:absolute; top:-9px; right:-9px; width:18px; height:18px; border-radius:999px; background:#f4efe4"></span>
+              </div>
+
+              <div style="font-family:var(--mono); font-size:8.5px; line-height:2; color:#6b6b63">
+                <div style="display:flex; justify-content:space-between"><span>RECEIPT</span><span>APPROVED</span></div>
+                <div style="display:flex; justify-content:space-between"><span>STAMP</span><span>CAFÉ-ISSUED</span></div>
+                <div style="display:flex; justify-content:space-between; color:#3a2c24"><span>REWARD</span><span>REDEEM IN PERSON</span></div>
+              </div>
+              <div style="margin-top:14px; text-align:center; font-family:var(--mono); font-size:8px; letter-spacing:0.1em; color:#6b6b63">CAP: 3 RECEIPTS / MEMBER / DAY</div>
+
+              <div style="position:absolute; left:0; right:0; bottom:0; height:9px; background-image:repeating-linear-gradient(90deg, #c6d8e6 0 8px, #ebe4d5 8px 16px)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section style="border-top:1px dashed rgba(107,107,99,0.32); padding:52px 0 60px">
+      <div style="display:grid; grid-template-columns:minmax(0,180px) minmax(0,1fr); gap:40px">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">01 — The taste vector</div>
+        <div style="min-width:0">
+          <h2 style="font-family:'Fraunces Variable',Georgia,serif; font-weight:600; font-size:clamp(24px,3vw,34px); line-height:1.15; margin:0; max-width:26ch; text-wrap:pretty; color:#3a2c24">
+            Seven axes. A café gets scored on all of them, same as a person.
+          </h2>
+          <p style="font-size:15.5px; line-height:1.65; color:#1a1a17; max-width:56ch; margin:16px 0 0">
+            A person heading in for three hours of deep work and a person meeting a
+            first date have almost nothing in common except that both walked into a
+            café. Every user and every café gets the same 7-dimension profile, plus
+            a separate categorical answer for primary drink, because "sweet vs.
+            bold" and "coffee vs. matcha" are different questions a single axis
+            would blur together.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr)); gap:30px 22px; margin-top:56px">
+
+        <div style="position:relative; padding-top:20px; transform:rotate(-2.1deg)">
+          <svg width="20" height="34" viewBox="0 0 26 46" style="position:absolute; left:16px; top:2px; z-index:2; filter:drop-shadow(0 3px 4px rgba(36,26,21,0.22))" aria-hidden="true">
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#6b6b63" stroke-width="3"></path>
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#ebe4d5" stroke-width="1.1"></path>
+          </svg>
+          <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:4px; padding:20px 14px 16px; box-shadow:0 10px 18px rgba(36,26,21,0.1)">
+            <div style="font-family:var(--mono); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Drink · ×1.3</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:14px; margin-top:10px; line-height:1.3; color:#3a2c24">Sweet, milky<br/>↔ strong, bold</div>
+          </div>
+        </div>
+
+        <div style="position:relative; padding-top:20px; transform:rotate(1.6deg)">
+          <svg width="20" height="34" viewBox="0 0 26 46" style="position:absolute; left:16px; top:2px; z-index:2; filter:drop-shadow(0 3px 4px rgba(36,26,21,0.22))" aria-hidden="true">
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#6b6b63" stroke-width="3"></path>
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#ebe4d5" stroke-width="1.1"></path>
+          </svg>
+          <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:4px; padding:20px 14px 16px; box-shadow:0 10px 18px rgba(36,26,21,0.1)">
+            <div style="font-family:var(--mono); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Energy · ×1.2</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:14px; margin-top:10px; line-height:1.3; color:#3a2c24">Quiet room<br/>↔ lively room</div>
+          </div>
+        </div>
+
+        <div style="position:relative; padding-top:20px; transform:rotate(-1.2deg)">
+          <svg width="20" height="34" viewBox="0 0 26 46" style="position:absolute; left:16px; top:2px; z-index:2; filter:drop-shadow(0 3px 4px rgba(36,26,21,0.22))" aria-hidden="true">
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#6b6b63" stroke-width="3"></path>
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#ebe4d5" stroke-width="1.1"></path>
+          </svg>
+          <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:4px; padding:20px 14px 16px; box-shadow:0 10px 18px rgba(36,26,21,0.1)">
+            <div style="font-family:var(--mono); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Aesthetic · ×1.0</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:14px; margin-top:10px; line-height:1.3; color:#3a2c24">Minimal<br/>↔ cosy, maximal</div>
+          </div>
+        </div>
+
+        <div style="position:relative; padding-top:20px; transform:rotate(2.3deg)">
+          <svg width="20" height="34" viewBox="0 0 26 46" style="position:absolute; left:16px; top:2px; z-index:2; filter:drop-shadow(0 3px 4px rgba(36,26,21,0.22))" aria-hidden="true">
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#6b6b63" stroke-width="3"></path>
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#ebe4d5" stroke-width="1.1"></path>
+          </svg>
+          <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:4px; padding:20px 14px 16px; box-shadow:0 10px 18px rgba(36,26,21,0.1)">
+            <div style="font-family:var(--mono); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Pace · ×1.1</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:14px; margin-top:10px; line-height:1.3; color:#3a2c24">In and out<br/>↔ linger for hours</div>
+          </div>
+        </div>
+
+        <div style="position:relative; padding-top:20px; transform:rotate(-1.8deg)">
+          <svg width="20" height="34" viewBox="0 0 26 46" style="position:absolute; left:16px; top:2px; z-index:2; filter:drop-shadow(0 3px 4px rgba(36,26,21,0.22))" aria-hidden="true">
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#6b6b63" stroke-width="3"></path>
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#ebe4d5" stroke-width="1.1"></path>
+          </svg>
+          <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:4px; padding:20px 14px 16px; box-shadow:0 10px 18px rgba(36,26,21,0.1)">
+            <div style="font-family:var(--mono); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Adventure · ×0.8</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:14px; margin-top:10px; line-height:1.3; color:#3a2c24">The classics<br/>↔ rotating seasonal</div>
+          </div>
+        </div>
+
+        <div style="position:relative; padding-top:20px; transform:rotate(1.1deg)">
+          <svg width="20" height="34" viewBox="0 0 26 46" style="position:absolute; left:16px; top:2px; z-index:2; filter:drop-shadow(0 3px 4px rgba(36,26,21,0.22))" aria-hidden="true">
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#6b6b63" stroke-width="3"></path>
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#ebe4d5" stroke-width="1.1"></path>
+          </svg>
+          <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:4px; padding:20px 14px 16px; box-shadow:0 10px 18px rgba(36,26,21,0.1)">
+            <div style="font-family:var(--mono); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Price · ×1.0</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:14px; margin-top:10px; line-height:1.3; color:#3a2c24">Under $5<br/>↔ won't flinch at $9+</div>
+          </div>
+        </div>
+
+        <div style="position:relative; padding-top:20px; transform:rotate(-2.4deg)">
+          <svg width="20" height="34" viewBox="0 0 26 46" style="position:absolute; left:16px; top:2px; z-index:2; filter:drop-shadow(0 3px 4px rgba(36,26,21,0.22))" aria-hidden="true">
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#6b6b63" stroke-width="3"></path>
+            <path d="M13 4 C6 4 2 9 2 16 L2 32 C2 39 7 43 13 43 C19 43 23 39 23 33 L23 12" fill="none" stroke="#ebe4d5" stroke-width="1.1"></path>
+          </svg>
+          <div style="background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:4px; padding:20px 14px 16px; box-shadow:0 10px 18px rgba(36,26,21,0.1)">
+            <div style="font-family:var(--mono); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6b6b63">Food · ×0.7</div>
+            <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:14px; margin-top:10px; line-height:1.3; color:#3a2c24">Drink-only visits<br/>↔ serious pastry case</div>
+          </div>
+        </div>
+
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:34px">
+        <span style="font-family:var(--mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#6b6b63">Primary drink, kept separate:</span>
+        <span style="display:flex; align-items:center; gap:5px; font-family:var(--mono); font-size:9px; color:#6b4a32"><i style="width:7px; height:7px; border-radius:999px; background:#6b4a32; display:inline-block"></i>Coffee</span>
+        <span style="display:flex; align-items:center; gap:5px; font-family:var(--mono); font-size:9px; color:#7a9a5b"><i style="width:7px; height:7px; border-radius:999px; background:#7a9a5b; display:inline-block"></i>Matcha</span>
+        <span style="display:flex; align-items:center; gap:5px; font-family:var(--mono); font-size:9px; color:#c2a25a"><i style="width:7px; height:7px; border-radius:999px; background:#c2a25a; display:inline-block"></i>Tea / chai</span>
+        <span style="display:flex; align-items:center; gap:5px; font-family:var(--mono); font-size:9px; color:#93a0a8"><i style="width:7px; height:7px; border-radius:999px; background:#93a0a8; display:inline-block"></i>Other</span>
+      </div>
+    </section>
+
+    <section style="border-top:1px dashed rgba(107,107,99,0.32); padding:52px 0 76px">
+      <div style="display:grid; grid-template-columns:minmax(0,180px) minmax(0,1fr); gap:40px">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">02 — The product</div>
+        <div style="min-width:0">
+          <h2 style="font-family:'Fraunces Variable',Georgia,serif; font-weight:600; font-size:clamp(24px,3vw,34px); line-height:1.15; margin:0; max-width:26ch; text-wrap:pretty; color:#3a2c24">
+            One quiz, four screens that actually use it.
+          </h2>
+          <p style="font-size:15.5px; line-height:1.65; color:#1a1a17; max-width:56ch; margin:16px 0 0">
+            Take the quiz once. It feeds a matched "Today" feed, the context
+            picker on every café's own page, and the café's own portal for
+            reviewing receipts — four screens off one taste vector, not four
+            separate flows bolted together.
+          </p>
+        </div>
+      </div>
+
+      <div style="position:relative; height:400px; margin-top:56px; max-width:640px">
+
+        <div style="position:absolute; left:0; top:0; width:230px; transform:rotate(-3deg); z-index:1; box-shadow:0 18px 30px rgba(36,26,21,0.16); border-radius:8px; overflow:hidden; background:#f4efe4">
+          <div style="background:#ebe4d5; padding:6px 10px; display:flex; align-items:center; gap:5px; border-bottom:1px solid rgba(107,107,99,0.2)">
+            <span style="width:7px; height:7px; border-radius:999px; background:#d99a90"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#c2a25a"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#7a9a5b"></span>
+            <span style="font-family:var(--mono); font-size:8px; color:#6b6b63; margin-left:4px">quiz.tsx</span>
+          </div>
+          <div style="padding:16px 14px 18px">
+            <div style="height:4px; border-radius:99px; background:rgba(107,107,99,0.16)"><div style="width:60%; height:100%; border-radius:99px; background:#3a2c24"></div></div>
+            <div style="font-family:var(--mono); font-size:7.5px; color:#6b6b63; margin-top:8px; letter-spacing:0.08em">QUESTION 4 OF 7 · ENERGY</div>
+            <div style="margin-top:14px; border:1.5px solid rgba(107,107,99,0.22); border-radius:7px; padding:10px 12px; font-family:'Fraunces Variable',Georgia,serif; font-size:12px; color:#3a2c24">Quiet spaces</div>
+            <div style="margin-top:8px; border:1.5px solid #3a2c24; border-radius:7px; padding:10px 12px; font-family:'Fraunces Variable',Georgia,serif; font-size:12px; background:rgba(107,107,99,0.1); color:#3a2c24">Lively, social rooms</div>
+          </div>
+        </div>
+
+        <div style="position:absolute; left:180px; top:36px; width:236px; transform:rotate(2deg); z-index:2; box-shadow:0 18px 30px rgba(36,26,21,0.18); border-radius:8px; overflow:hidden; background:#f4efe4">
+          <div style="background:#ebe4d5; padding:6px 10px; display:flex; align-items:center; gap:5px; border-bottom:1px solid rgba(107,107,99,0.2)">
+            <span style="width:7px; height:7px; border-radius:999px; background:#d99a90"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#c2a25a"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#7a9a5b"></span>
+            <span style="font-family:var(--mono); font-size:8px; color:#6b6b63; margin-left:4px">today.tsx</span>
+          </div>
+          <div style="padding:16px 14px 18px">
+            <div style="display:flex; align-items:center; gap:10px">
+              <span style="width:34px; height:34px; border-radius:999px; background:#3a2c24; color:#e8c4c0; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:10px; font-weight:600">92%</span>
+              <div>
+                <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:13px; color:#3a2c24">Fjord &amp; Filter</div>
+                <div style="font-family:var(--mono); font-size:7.5px; color:#6b6b63">0.4 km · quiet</div>
+              </div>
+            </div>
+            <div style="margin-top:12px; height:8px; border-radius:4px; background:rgba(107,107,99,0.14)"></div>
+            <div style="margin-top:6px; height:8px; border-radius:4px; background:rgba(107,107,99,0.14); width:82%"></div>
+            <div style="margin-top:6px; height:8px; border-radius:4px; background:rgba(107,107,99,0.14); width:64%"></div>
+          </div>
+        </div>
+
+        <div style="position:absolute; left:20px; top:190px; width:230px; transform:rotate(-1.4deg); z-index:3; box-shadow:0 18px 30px rgba(36,26,21,0.2); border-radius:8px; overflow:hidden; background:#f4efe4">
+          <div style="background:#ebe4d5; padding:6px 10px; display:flex; align-items:center; gap:5px; border-bottom:1px solid rgba(107,107,99,0.2)">
+            <span style="width:7px; height:7px; border-radius:999px; background:#d99a90"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#c2a25a"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#7a9a5b"></span>
+            <span style="font-family:var(--mono); font-size:8px; color:#6b6b63; margin-left:4px">cafes/[slug].tsx</span>
+          </div>
+          <div style="padding:16px 14px 18px">
+            <div style="display:flex; gap:6px; flex-wrap:wrap">
+              <span style="font-family:var(--mono); font-size:7px; letter-spacing:0.06em; text-transform:uppercase; border:1px solid rgba(107,107,99,0.25); border-radius:999px; padding:3px 8px; color:#6b6b63">Study</span>
+              <span style="font-family:var(--mono); font-size:7px; letter-spacing:0.06em; text-transform:uppercase; background:#3a2c24; border-radius:999px; padding:3px 8px; color:#f4efe4">Date</span>
+              <span style="font-family:var(--mono); font-size:7px; letter-spacing:0.06em; text-transform:uppercase; border:1px solid rgba(107,107,99,0.25); border-radius:999px; padding:3px 8px; color:#6b6b63">Quick</span>
+            </div>
+            <div style="display:flex; align-items:flex-end; gap:4px; height:44px; margin-top:14px">
+              <div style="width:10%; height:70%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+              <div style="width:10%; height:90%; background:#3a2c24; border-radius:2px"></div>
+              <div style="width:10%; height:50%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+              <div style="width:10%; height:60%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+              <div style="width:10%; height:35%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+              <div style="width:10%; height:80%; background:#9dbbd0; border-radius:2px"></div>
+              <div style="width:10%; height:30%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute; left:200px; top:236px; width:230px; transform:rotate(3.4deg); z-index:4; box-shadow:0 18px 30px rgba(36,26,21,0.24); border-radius:8px; overflow:hidden; background:#f4efe4">
+          <div style="background:#ebe4d5; padding:6px 10px; display:flex; align-items:center; gap:5px; border-bottom:1px solid rgba(107,107,99,0.2)">
+            <span style="width:7px; height:7px; border-radius:999px; background:#d99a90"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#c2a25a"></span>
+            <span style="width:7px; height:7px; border-radius:999px; background:#7a9a5b"></span>
+            <span style="font-family:var(--mono); font-size:8px; color:#6b6b63; margin-left:4px">portal/[slug].tsx</span>
+          </div>
+          <div style="padding:16px 14px 18px">
+            <div style="font-family:var(--mono); font-size:7px; letter-spacing:0.1em; text-transform:uppercase; color:#6b6b63">Receipt review</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; border:1px solid rgba(107,107,99,0.22); border-radius:7px; padding:8px 10px">
+              <span style="font-family:'Fraunces Variable',Georgia,serif; font-size:11px; color:#3a2c24">#0142 · $6.75</span>
+              <span style="display:flex; gap:5px">
+                <span style="width:18px; height:18px; border-radius:5px; background:#3a2c24; color:#f4efe4; font-size:10px; display:flex; align-items:center; justify-content:center">✓</span>
+                <span style="width:18px; height:18px; border-radius:5px; background:rgba(107,107,99,0.14); color:#6b6b63; font-size:10px; display:flex; align-items:center; justify-content:center">✕</span>
+              </span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; border:1px solid rgba(107,107,99,0.22); border-radius:7px; padding:8px 10px; opacity:0.55">
+              <span style="font-family:'Fraunces Variable',Georgia,serif; font-size:11px; color:#3a2c24">#0141 · $4.20</span>
+              <span style="font-family:var(--mono); font-size:7px; color:#6b6b63">APPROVED</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p style="font-size:12px; color:#6b6b63; margin-top:8px; font-family:var(--mono); letter-spacing:0.02em">Reconstructed layouts, not literal screenshots — the app has no marketing screenshots yet.</p>
+    </section>
+
+    <section style="border-top:1px dashed rgba(107,107,99,0.32); padding:52px 0 60px">
+      <div style="display:grid; grid-template-columns:minmax(0,180px) minmax(0,1fr); gap:40px">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">03 — The matching engine</div>
+        <div style="min-width:0">
+          <h2 style="font-family:'Fraunces Variable',Georgia,serif; font-weight:600; font-size:clamp(24px,3vw,34px); line-height:1.15; margin:0; max-width:26ch; text-wrap:pretty; color:#3a2c24">
+            What a 92% match is structurally not allowed to include.
+          </h2>
+          <p style="font-size:15.5px; line-height:1.65; color:#1a1a17; max-width:56ch; margin:16px 0 0">
+            Paid or partner status can change whether a café gets promoted; it can
+            never change its match score. The scoring function's input type has no
+            field for partner status or price paid, so there's nothing for it to
+            read — the guarantee is enforced by the type system, not by convention.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; align-items:flex-start; background:rgba(107,107,99,0.1); border-radius:16px; padding:20px 22px; margin-top:36px; max-width:640px">
+        <div style="flex:0 0 auto; width:28px; height:28px; border-radius:50%; background:#3a2c24; color:#f4efe4; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700">✓</div>
+        <div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-weight:600; color:#3a2c24; font-size:16px; margin-bottom:4px">The rule we don't break</div>
+          <div style="font-size:14px; color:#1a1a17; line-height:1.6">
+            Cafés can pay to be listed, featured, or entered into the City Card.
+            They can never pay for a better Match %. Every café gets the same
+            honest number, partner or not — copied verbatim from the app's own
+            marketing copy, because I wanted the case study to hold itself to it.
+          </div>
+        </div>
+      </div>
+
+      <div style="position:relative; max-width:640px; margin:64px auto 0">
+
+        <div style="position:relative; width:220px; margin:0 auto; background:#ebe4d5; border:1px solid rgba(107,107,99,0.22); border-radius:12px; box-shadow:0 20px 34px rgba(36,26,21,0.14); padding:16px 16px 18px; z-index:2">
+          <div style="height:64px; border-radius:8px; background:linear-gradient(135deg,#cbb89a,#3a2c24)"></div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-top:12px">
+            <div>
+              <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:15px; color:#3a2c24">Fjord &amp; Filter</div>
+              <div style="font-family:var(--mono); font-size:8px; color:#6b6b63; margin-top:3px">Quiet · $$ · 0.4 km</div>
+            </div>
+            <span style="width:38px; height:38px; border-radius:999px; background:#3a2c24; color:#e8c4c0; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:11px; font-weight:600; flex-shrink:0">92%</span>
+          </div>
+          <div style="display:flex; align-items:flex-end; gap:3px; height:26px; margin-top:12px">
+            <div style="width:12%; height:65%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+            <div style="width:12%; height:85%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+            <div style="width:12%; height:45%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+            <div style="width:12%; height:70%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+            <div style="width:12%; height:30%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+            <div style="width:12%; height:90%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+            <div style="width:12%; height:55%; background:rgba(107,107,99,0.16); border-radius:2px"></div>
+          </div>
+        </div>
+
+        <div style="position:absolute; left:0; top:26px; width:190px; text-align:right; z-index:1">
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-style:italic; font-size:13px; color:#3a2c24; line-height:1.35">no partner-status field to read</div>
+          <svg width="70" height="26" viewBox="0 0 70 26" style="margin-left:auto; margin-top:4px" aria-hidden="true">
+            <path d="M2 4 C 30 4, 45 20, 66 20" fill="none" stroke="#3a2c24" stroke-width="1.4" stroke-dasharray="1 4" stroke-linecap="round"/>
+            <path d="M60 15 L67 20 L60 24" fill="none" stroke="#3a2c24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div style="position:absolute; right:0; top:6px; width:180px; z-index:1">
+          <svg width="70" height="30" viewBox="0 0 70 30" aria-hidden="true">
+            <path d="M2 26 C 24 26, 40 6, 68 4" fill="none" stroke="#9dbbd0" stroke-width="1.4" stroke-dasharray="1 4" stroke-linecap="round"/>
+            <path d="M60 2 L69 4 L62 10" fill="none" stroke="#9dbbd0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-style:italic; font-size:13px; color:#6b8fa8; line-height:1.35; margin-top:2px">0.4 km, decayed harder — it's winter</div>
+        </div>
+
+        <div style="position:absolute; left:6px; bottom:-8px; width:180px; z-index:1">
+          <svg width="70" height="30" viewBox="0 0 70 30" aria-hidden="true">
+            <path d="M2 4 C 26 4, 42 22, 66 24" fill="none" stroke="#6b6b63" stroke-width="1.4" stroke-dasharray="1 4" stroke-linecap="round"/>
+            <path d="M58 20 L67 24 L61 28" fill="none" stroke="#6b6b63" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-style:italic; font-size:13px; color:#6b6b63; line-height:1.35; margin-top:2px">seven axes, never one star rating</div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:96px; padding:16px 18px; border:1px dashed rgba(107,107,99,0.3); border-radius:12px; font-family:var(--mono); font-size:9.5px; line-height:1.9; letter-spacing:0.03em; color:#6b6b63; max-width:640px; margin-left:auto; margin-right:auto">
+        A missing input drops out of the blend entirely, renormalized — a café
+        with no known coordinates isn't scored as 0m or ∞ away, proximity just
+        isn't part of its score yet. A test in score.test.ts pins the no-partner-field
+        guarantee down so it can't regress silently.
+      </div>
+    </section>
+
+    <section style="border-top:1px dashed rgba(107,107,99,0.32); padding:52px 0 60px">
+      <div style="display:grid; grid-template-columns:minmax(0,180px) minmax(0,1fr); gap:40px">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">04 — City Card</div>
+        <div style="min-width:0">
+          <h2 style="font-family:'Fraunces Variable',Georgia,serif; font-weight:600; font-size:clamp(24px,3vw,34px); line-height:1.15; margin:0; max-width:26ch; text-wrap:pretty; color:#3a2c24">
+            Receipt in, stamp out, five before a reward.
+          </h2>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:20px; margin-top:40px">
+        <div style="background:#ebe4d5; border-radius:12px; padding:24px 20px 22px">
+          <div style="font-family:var(--mono); font-size:26px; line-height:1; color:#3a2c24">01</div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:19px; margin-top:10px; color:#3a2c24">Save &amp; visit</div>
+          <p style="font-size:13px; line-height:1.6; color:#1a1a17; margin:8px 0 0">A matched café from Today or Discover, saved and visited in person.</p>
+        </div>
+        <div style="background:#ebe4d5; border-radius:12px; padding:24px 20px 22px">
+          <div style="font-family:var(--mono); font-size:26px; line-height:1; color:#3a2c24">02</div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:19px; margin-top:10px; color:#3a2c24">Upload a receipt</div>
+          <p style="font-size:13px; line-height:1.6; color:#1a1a17; margin:8px 0 0">Capped at 3 uploads a day per member — a receipt, not a claim, is the unit of trust.</p>
+        </div>
+        <div style="background:#ebe4d5; border-radius:12px; padding:24px 20px 22px">
+          <div style="font-family:var(--mono); font-size:26px; line-height:1; color:#3a2c24">03</div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:19px; margin-top:10px; color:#3a2c24">Café approves</div>
+          <p style="font-size:13px; line-height:1.6; color:#1a1a17; margin:8px 0 0">Reviewed from the café's own portal, not the consumer-facing admin tools.</p>
+        </div>
+        <div style="background:#ebe4d5; border-radius:12px; padding:24px 20px 22px">
+          <div style="font-family:var(--mono); font-size:26px; line-height:1; color:#3a2c24">04</div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:19px; margin-top:10px; color:#3a2c24">Stamp, then reward</div>
+          <p style="font-size:13px; line-height:1.6; color:#1a1a17; margin:8px 0 0">Five stamps unlock a reward, activated and redeemed in person.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:24px; margin-top:44px; align-items:start; max-width:520px">
+        <div style="position:relative">
+          <div style="background:#f4efe4; border:10px solid #fff; box-shadow:0 14px 26px rgba(36,26,21,0.14); transform:rotate(-3deg)">
+            <div style="height:150px; background:#ebe4d5; display:flex; align-items:center; justify-content:center">
+              <span style="font-family:var(--mono); font-size:30px; color:#6b6b63; text-decoration:line-through; text-decoration-color:#a8503f; text-decoration-thickness:2px">★★★★☆</span>
+            </div>
+            <div style="padding:10px 6px 4px; text-align:center; font-family:'Fraunces Variable',Georgia,serif; font-style:italic; font-size:12px; color:#6b6b63">a star rating</div>
+          </div>
+        </div>
+        <div style="position:relative; margin-top:20px">
+          <div style="background:#f4efe4; border:10px solid #fff; box-shadow:0 14px 26px rgba(36,26,21,0.18); transform:rotate(2.4deg)">
+            <div style="height:150px; background:#3a2c24; display:flex; align-items:center; justify-content:center">
+              <span style="font-family:var(--mono); font-size:30px; color:#e8c4c0; font-weight:600">92%</span>
+            </div>
+            <div style="padding:10px 6px 4px; text-align:center; font-family:'Fraunces Variable',Georgia,serif; font-style:italic; font-size:12px; color:#3a2c24">a match, to you</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px dashed rgba(107,107,99,0.32); padding:52px 0 24px">
+      <div style="display:grid; grid-template-columns:minmax(0,180px) minmax(0,1fr); gap:40px">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63">05 — Security</div>
+        <div style="min-width:0">
+          <h2 style="font-family:'Fraunces Variable',Georgia,serif; font-weight:600; font-size:clamp(24px,3vw,34px); line-height:1.15; margin:0; max-width:26ch; text-wrap:pretty; color:#3a2c24">
+            Two passes through my own code before a pilot user touches it.
+          </h2>
+          <p style="font-size:15.5px; line-height:1.65; color:#1a1a17; max-width:56ch; margin:16px 0 0">
+            Pass one covered auth, database, application, and infrastructure
+            broadly. Pass two went back through the row-level security policies
+            and the analytics write path line by line and caught three issues
+            pass one missed, one of them critical. I'm keeping the findings
+            table, not polishing it out.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; margin-top:44px">
+        <div style="position:relative; max-width:440px; width:100%">
+          <div style="position:absolute; right:26px; top:-14px; width:30px; height:18px; background:#3a2c24; border-radius:3px; box-shadow:0 4px 8px rgba(36,26,21,0.35); z-index:3"></div>
+          <div style="position:absolute; right:35px; top:-21px; width:2px; height:18px; background:#6b6b63; border-radius:2px; transform:rotate(18deg); z-index:2"></div>
+          <div style="background:#3a2c24; color:#f4efe4; padding:26px 24px 24px; border-radius:14px; box-shadow:0 20px 34px rgba(36,26,21,0.22); transform:rotate(-0.6deg)">
+            <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#c6d8e6">Findings, as recorded</div>
+            <div style="margin:14px 0; border-top:1px dashed rgba(244,239,228,0.22)"></div>
+            <div style="display:grid; grid-template-columns:1fr auto; gap:9px 14px; font-size:12.5px; color:#f4efe4">
+              <span>Stamps mintable, skipping receipts</span><span style="font-family:var(--mono); font-size:10px; color:#e8c4c0; text-transform:uppercase">Critical · written, not applied</span>
+              <span>Café portal, unauth lockout</span><span style="font-family:var(--mono); font-size:10px; color:#a8c090; text-transform:uppercase">Fixed</span>
+              <span>Forgeable partner metrics</span><span style="font-family:var(--mono); font-size:10px; color:#a8c090; text-transform:uppercase">Fixed</span>
+              <span>Portal PIN, no rate limit</span><span style="font-family:var(--mono); font-size:10px; color:#a8c090; text-transform:uppercase">Fixed</span>
+              <span>Analytics endpoint, unthrottled</span><span style="font-family:var(--mono); font-size:10px; color:#a8c090; text-transform:uppercase">Fixed</span>
+              <span>Free-tier backups, unverified</span><span style="font-family:var(--mono); font-size:10px; color:#c6d8e6; text-transform:uppercase">Open · operational</span>
+            </div>
+            <div style="margin:16px 0 0; border-top:1px dashed rgba(244,239,228,0.22); padding-top:12px; font-family:var(--mono); font-size:9px; letter-spacing:0.06em; color:#cabfae">10 of 12 findings closed in code · 2 remain operational, not technical</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div style="max-width:1120px; margin:0 auto; padding:0 24px">
+    <section style="border-top:1px dashed rgba(107,107,99,0.32); padding:44px 0 0">
+      <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:baseline; font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#6b6b63; padding-bottom:44px">
+        <span>Brew &amp; the City</span>
+        <span>Café discovery &amp; loyalty — case study</span>
+      </div>
+    </section>
+  </div>
+
+</div>

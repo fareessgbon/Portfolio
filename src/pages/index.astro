@@ -7,7 +7,16 @@ import { homePhotos, textTiles, highlights, avatar, HEART } from '../lib/gallery
 const projects = (await getCollection('work', ({ data }) => !data.draft)).sort((a, b) => a.data.order - b.data.order);
 const first = (s) => s.split('. ')[0].replace(/\.$/, '') + '.';
 const coverFor = {
-  'hush-jewels': '/photos/gold_hoops_jewelry_collection.jpg',
+  'black-wings': '/photos/black-wings-cover.svg',
+  'brew-and-the-city': '/photos/brew-and-the-city-cover.svg',
+  'frozen-guessing-game': '/photos/frozen-guessing-game-cover.svg',
+  'glucose-monitoring': '/photos/glucose-monitoring-cover.svg',
+  'healoderm-influencer-marketing': '/photos/healoderm-cover.svg',
+  'hush-jewels': '/photos/hush-jewels-cover.svg',
+  'kerecis-clinical-courier': '/photos/kerecis-clinical-courier-cover.svg',
+  'overflow-pop-up-campaign': '/photos/overflow-pop-up-campaign-cover.svg',
+  'planted-souls': '/photos/planted-souls-cover.svg',
+  'wecs-community-ops': '/photos/wecs-community-ops-cover.svg',
 };
 // Build an interleaved feed for a lively masonry. Home and Explore draw from
 // disjoint photo sets (see lib/gallery.js), so nothing repeats site-wide.
@@ -23,7 +32,8 @@ const order = [
   P[1],
   PH[1],
   PH[2],
-  P[7],
+  P[9],
+  P[10],
   TX[1],
   P[2],
   PH[3],
@@ -39,6 +49,7 @@ const order = [
   PH[6],
   TX[5],
   P[6],
+  P[7],
 ];
 for (const it of order) if (it) feed.push(it);
 ---

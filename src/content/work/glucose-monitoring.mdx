@@ -12,211 +12,229 @@ links:
 kind: study
 featured: true
 order: 2
-outcomes:
-  - metric: "Core flow completion"
-    value: "Qualitative"
-    basis: "Design walkthroughs of the authentication and logging journeys. Formal usability testing is the planned next phase."
 ---
 
-## The problem
+<div style="background:#FDFAF7; color:#241C14; font-family:var(--sans); overflow-x:hidden; margin:0 -1px; border-radius:18px; border:1px solid #E6E1D3">
 
-A person managing diabetes checks their glucose more often than they check the
-weather. That reading is not a dashboard problem, it's a companionship problem.
+  <div style="position:relative; overflow:hidden; border-radius:18px 18px 0 0">
+    <div style="position:absolute; inset:0 50% 0 0; background:#FDFAF7"></div>
+    <div style="position:absolute; inset:0 0 0 50%; background:#60361F; background-image:repeating-linear-gradient(to bottom, rgba(255,255,255,0.05) 0 1px, transparent 1px 24px), repeating-linear-gradient(to right, rgba(255,255,255,0.05) 0 1px, transparent 1px 24px)"></div>
+    <div style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:#9a742d"></div>
 
-<Sidenote n={1}>My design bar for this project: a reading should be legible from
-arm's length, at night, by someone who has already done this twelve times today.</Sidenote>
+    <div style="position:relative; padding:clamp(32px,6vw,64px) clamp(20px,5vw,56px) clamp(40px,6vw,64px)">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase">
+        <span style="color:#8A6A28">Figma prototype · 2024 · Role — Product designer</span>
+        <span style="color:#E4D3AE; text-align:right">Figma · HCI · Data flows<br/>Units — mmol/L</span>
+      </div>
 
-Most consumer glucose apps either lean hard into fitness-tracker gamification
-or swing clinical: dense, cold, and built for the clinician instead of the
-patient. I didn't want to pick a side. GluCare keeps the mascot, the streaks,
-the XP, whatever makes checking in twelve times a day feel less like a chore,
-but every one of those choices sits on top of clinical accessibility
-standards, not instead of them.
+      <div style="position:relative; margin-top:28px; min-height:clamp(150px,22vw,220px)">
+        <h1 style="position:absolute; inset:0; margin:0; font-family:'Fraunces Variable',Georgia,serif; font-variation-settings:'SOFT' 60,'WONK' 1; font-weight:500; font-size:clamp(30px,5.2vw,58px); line-height:1.02; letter-spacing:-0.02em; color:#241C14; clip-path:inset(0 50% 0 0); text-wrap:pretty">The mascot and the XP —<br/><span style="font-style:italic">on top of</span> clinical accessibility,<br/>never instead of it.</h1>
+        <h1 style="position:absolute; inset:0; margin:0; font-family:'Fraunces Variable',Georgia,serif; font-variation-settings:'SOFT' 60,'WONK' 1; font-weight:500; font-size:clamp(30px,5.2vw,58px); line-height:1.02; letter-spacing:-0.02em; color:#F3EFE4; clip-path:inset(0 0 0 50%); text-wrap:pretty">The mascot and the XP —<br/><span style="font-style:italic">on top of</span> clinical accessibility,<br/>never instead of it.</h1>
+      </div>
 
-## The constraints
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:36px; align-items:end">
+        <p style="margin:0; max-width:38ch; font-size:16px; line-height:1.6; color:#3B2F22">A person managing diabetes checks their glucose more often than they check the weather. That reading is not a dashboard problem, it's a companionship problem.</p>
+        <p style="margin:0; max-width:32ch; margin-left:auto; text-align:right; font-family:var(--mono); font-size:11px; line-height:1.8; letter-spacing:0.1em; text-transform:uppercase; color:#E4D3AE">Legible from arm's length · at night ·<br/>on the twelfth check of the day</p>
+      </div>
+    </div>
+  </div>
 
-<Callout kind="constraint">
-No real patient data was available, so every screen was designed against
-realistic synthetic ranges (mmol/L, the Canadian convention). Solo designer, no
-engineering partner, Figma prototype only.
-</Callout>
+  <div style="max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,56px)">
 
-Working without real data turned out to be a gift. It forced me to design for
-every state honestly instead of cherry-picking happy paths. Hypoglycemic
-readings, sensor gaps, and stale data all got first-class visual treatment,
-because in real life those are the moments that matter most.
+    <section style="padding:56px 0 8px">
+      <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:28px">
+        <h2 style="margin:0; font-family:'Fraunces Variable',Georgia,serif; font-weight:500; font-size:clamp(22px,3vw,30px)">Three passes, in order</h2>
+        <span style="flex:1; height:1px; background:#D9D2BE"></span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:20px">
+        <div style="border:1px solid #E0DACB; border-radius:12px; background:#FFFDF6; padding:22px 20px">
+          <div style="font-family:var(--mono); font-size:22px; color:#7C8C4B">01</div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:19px; margin-top:10px">Authentication and onboarding</div>
+          <p style="font-size:13.5px; line-height:1.6; color:#4A443D; margin:10px 0 0">Health data is regulated data. I mapped the sign-in flow around token-based authentication patterns and explicit consent screens before touching any visual design.</p>
+        </div>
+        <div style="border:1px solid #E0DACB; border-radius:12px; background:#FFFDF6; padding:22px 20px">
+          <div style="font-family:var(--mono); font-size:22px; color:#7C8C4B">02</div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:19px; margin-top:10px">Core journeys</div>
+          <p style="font-size:13.5px; line-height:1.6; color:#4A443D; margin:10px 0 0">Log a reading, review a trend, keep up with medication and meals. Each journey got flowcharted, prototyped, and walked end to end.</p>
+        </div>
+        <div style="border:1px solid #E0DACB; border-radius:12px; background:#FFFDF6; padding:22px 20px">
+          <div style="font-family:var(--mono); font-size:22px; color:#7C8C4B">03</div>
+          <div style="font-family:'Fraunces Variable',Georgia,serif; font-size:19px; margin-top:10px">The reading itself</div>
+          <p style="font-size:13.5px; line-height:1.6; color:#4A443D; margin:10px 0 0">Colour is never the only signal. Every glucose state pairs colour with position, text, and shape, so the interface survives colour-vision deficiency and 2&nbsp;a.m. screen dimness.</p>
+        </div>
+      </div>
+    </section>
 
-## How I worked
+    <section style="padding:56px 0 8px">
+      <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:10px">
+        <h2 style="margin:0; font-family:'Fraunces Variable',Georgia,serif; font-weight:500; font-size:clamp(22px,3vw,30px)">The trend arrow is never colour-only</h2>
+        <span style="flex:1; height:1px; background:#D9D2BE"></span>
+        <span style="font-family:var(--mono); font-size:9.5px; letter-spacing:0.14em; color:#A2917A; white-space:nowrap">colour + position + text + shape</span>
+      </div>
+      <p style="font-size:14.5px; line-height:1.6; color:#4A443D; max-width:64ch; margin:0 0 28px">People who use these apps described reacting to the number but deciding based on direction, so direction got equal visual weight with the reading itself. The same synthetic component, shown under four conditions it was designed to survive.</p>
 
-The project moved through three passes:
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px">
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="background:#60361F; border:1px solid #7A5A3C; border-radius:8px; padding:18px 14px; display:flex; gap:12px; min-height:120px; align-items:center">
+            <div style="width:5px; align-self:stretch; border-radius:3px; background:linear-gradient(to bottom, #7C8C4B 0 34%, #7A5A3C 34%)"></div>
+            <div style="display:flex; flex-direction:column; gap:6px">
+              <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.14em; color:#E4D3AE">TREND</div>
+              <div style="display:flex; align-items:center; gap:6px"><span style="font-size:18px; color:#B4C27C">↓</span><span style="font-family:var(--mono); font-size:14px; font-weight:600; color:#F3EFE4">FALLING</span></div>
+              <div style="font-family:var(--mono); font-size:9px; color:#B8A67E">4.8 MMOL/L</div>
+            </div>
+          </div>
+          <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.1em; color:#6B5A42">01 — AS DESIGNED</div>
+        </div>
 
-1. **Authentication and onboarding.** Health data is regulated data. I mapped
-   the sign-in flow around token-based authentication patterns and explicit
-   consent screens before touching any visual design.
-2. **Core journeys.** Log a reading, review a trend, keep up with medication
-   and meals. Each journey got flowcharted, prototyped, and walked end to end.
-3. **The reading itself.** Color is never the only signal. Every glucose state
-   pairs color with position, text, and shape, so the interface survives
-   color-vision deficiency and 2 a.m. screen dimness.
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="filter:grayscale(1); background:#60361F; border:1px solid #7A5A3C; border-radius:8px; padding:18px 14px; display:flex; gap:12px; min-height:120px; align-items:center">
+            <div style="width:5px; align-self:stretch; border-radius:3px; background:linear-gradient(to bottom, #7C8C4B 0 34%, #7A5A3C 34%)"></div>
+            <div style="display:flex; flex-direction:column; gap:6px">
+              <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.14em; color:#E4D3AE">TREND</div>
+              <div style="display:flex; align-items:center; gap:6px"><span style="font-size:18px; color:#B4C27C">↓</span><span style="font-family:var(--mono); font-size:14px; font-weight:600; color:#F3EFE4">FALLING</span></div>
+              <div style="font-family:var(--mono); font-size:9px; color:#B8A67E">4.8 MMOL/L</div>
+            </div>
+          </div>
+          <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.1em; color:#6B5A42">02 — COLOUR REMOVED</div>
+        </div>
 
-## The screens
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="filter:brightness(0.32); background:#60361F; border:1px solid #7A5A3C; border-radius:8px; padding:18px 14px; display:flex; gap:12px; min-height:120px; align-items:center">
+            <div style="width:5px; align-self:stretch; border-radius:3px; background:linear-gradient(to bottom, #7C8C4B 0 34%, #7A5A3C 34%)"></div>
+            <div style="display:flex; flex-direction:column; gap:6px">
+              <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.14em; color:#E4D3AE">TREND</div>
+              <div style="display:flex; align-items:center; gap:6px"><span style="font-size:18px; color:#B4C27C">↓</span><span style="font-family:var(--mono); font-size:14px; font-weight:600; color:#F3EFE4">FALLING</span></div>
+              <div style="font-family:var(--mono); font-size:9px; color:#B8A67E">4.8 MMOL/L</div>
+            </div>
+          </div>
+          <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.1em; color:#6B5A42">03 — SCREEN DIMMED, 2AM</div>
+        </div>
 
-<div class="project-gallery project-gallery--glucose">
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/onboarding.png"
-      alt="GluCare splash screen with a warm bear mascot and Sign In / Create Account buttons on a cream and sage background"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Splash: consumer warmth before a single clinical detail</figcaption>
-  </figure>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="background:#60361F; border:1px solid #7A5A3C; border-radius:8px; min-height:120px; display:flex; align-items:center; justify-content:center; overflow:hidden">
+            <div style="transform:scale(0.62); display:flex; gap:12px; padding:18px 14px">
+              <div style="width:5px; align-self:stretch; border-radius:3px; background:linear-gradient(to bottom, #7C8C4B 0 34%, #7A5A3C 34%)"></div>
+              <div style="display:flex; flex-direction:column; gap:6px">
+                <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.14em; color:#E4D3AE">TREND</div>
+                <div style="display:flex; align-items:center; gap:6px"><span style="font-size:18px; color:#B4C27C">↓</span><span style="font-family:var(--mono); font-size:14px; font-weight:600; color:#F3EFE4">FALLING</span></div>
+                <div style="font-family:var(--mono); font-size:9px; color:#B8A67E">4.8 MMOL/L</div>
+              </div>
+            </div>
+          </div>
+          <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.1em; color:#6B5A42">04 — AT ARM'S LENGTH</div>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-family:var(--mono); font-size:10px; letter-spacing:0.04em; color:#8d857a">4.8 mmol/L is a synthetic reading — no real patient data was available for this project.</div>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/login-empty.png"
-      alt="GluCare log in screen with empty email and password fields and inline helper text"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Log in, empty state with inline validation copy</figcaption>
-  </figure>
+      <div style="margin-top:36px; border:1px solid #E0DACB; border-radius:12px; background:#FFFDF6; padding:26px 28px">
+        <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#9a742d; margin-bottom:6px">Fig. 1 — the decision, schematically</div>
+        <svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A glucose trend line with labeled high and low zones" style="width:100%; height:auto; display:block">
+          <rect x="20" y="35" width="520" height="80" fill="#B4C27C" opacity="0.22"/>
+          <line x1="20" y1="35" x2="540" y2="35" stroke="#D9D2BE" stroke-width="1"/>
+          <line x1="20" y1="115" x2="540" y2="115" stroke="#D9D2BE" stroke-width="1"/>
+          <text x="24" y="28" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8d857a">HIGH · 10.0 MMOL/L</text>
+          <text x="24" y="130" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8d857a">LOW · 4.0 MMOL/L</text>
+          <path d="M 30 80 Q 90 60, 140 72 T 250 58 T 360 96 T 470 70 L 530 76" fill="none" stroke="#9a742d" stroke-width="1.8"/>
+          <circle cx="360" cy="96" r="4.5" fill="#7C8C4B"/>
+          <text x="372" y="100" font-family="IBM Plex Mono, monospace" font-size="9" fill="#7C8C4B">4.8 ↓ FALLING</text>
+        </svg>
+        <p style="font-size:12.5px; line-height:1.6; color:#4A443D; margin:14px 0 0">That single decision, giving direction equal visual weight with the reading itself, reorganized the whole home screen around the only question that matters: what should I do in the next twenty minutes?</p>
+      </div>
+    </section>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/login-filled.png"
-      alt="GluCare log in screen with the email and password fields filled in"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Log in, filled state</figcaption>
-  </figure>
+    <section style="padding:56px 0 8px">
+      <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:10px">
+        <h2 style="margin:0; font-family:'Fraunces Variable',Georgia,serif; font-weight:500; font-size:clamp(22px,3vw,30px)">Thirteen real screens, framed not re-drawn</h2>
+        <span style="flex:1; height:1px; background:#D9D2BE"></span>
+      </div>
+      <p style="font-size:14.5px; line-height:1.6; color:#4A443D; max-width:64ch; margin:0 0 28px">Every screen below is the actual Figma prototype, not a re-drawn mockup of it.</p>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/home-dashboard.png"
-      alt="GluCare home dashboard showing a daily glucose trend chart with a shaded in-range band and a daily tip card"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Home dashboard, the daily trend read at a glance</figcaption>
-  </figure>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px">
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/onboarding.png" alt="GluCare splash screen with a warm bear mascot and Sign In / Create Account buttons on a cream and sage background" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Splash: consumer warmth before a single clinical detail</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/login-empty.png" alt="GluCare log in screen with empty email and password fields and inline helper text" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Log in, empty state with inline validation copy</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/login-filled.png" alt="GluCare log in screen with the email and password fields filled in" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Log in, filled state</figcaption>
+        </figure>
+        <figure style="margin:0; border:1.5px solid #241C14; border-radius:12px; overflow:hidden; background:#F2EDE2; box-shadow:8px 8px 0 #E4D9BE">
+          <img src="/photos/glucose-monitoring/home-dashboard.png" alt="GluCare home dashboard showing a daily glucose trend chart with a shaded in-range band and a daily tip card" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#4A443D; padding:10px 12px">Home dashboard, the daily trend read at a glance</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/add-device.png" alt="GluCare add-a-sensor screen with a device illustration inside a circular target and a plus button to pair" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Pairing a new sensor</figcaption>
+        </figure>
+        <figure style="margin:0; border:1.5px solid #241C14; border-radius:12px; overflow:hidden; background:#F2EDE2; box-shadow:8px 8px 0 #E4D9BE">
+          <img src="/photos/glucose-monitoring/scan-complete.png" alt="GluCare scan complete screen showing a 102 mg/dL result with trend, time scanned, XP earned, and streak" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#4A443D; padding:10px 12px">A single reading, with trend and context, not just a number</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/medication.png" alt="GluCare medication screen with a weekly day picker and morning and evening medication checklists" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Medication tracking, built for the same daily habit loop</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/nutrition-summary.png" alt="GluCare nutrition screen with calorie, carb, protein, and fat rings and an empty meal log" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Nutrition summary before anything is logged</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/food-search.png" alt="GluCare breakfast food search screen with an All / My Meals / My Recipes filter and a history list" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Searching and logging a meal from history</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/nutrition-logged.png" alt="GluCare nutrition screen with the calorie rings filled in and photographed breakfast, lunch, dinner, and snack entries" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Nutrition summary once the day is logged</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/my-recipes-empty.png" alt="GluCare My Recipes empty state with a bear mascot holding an apple and a green Create a Recipe button" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">My Recipes, empty state</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/my-recipes-empty-pressed.png" alt="GluCare My Recipes empty state with the Create a Recipe button in its pressed state" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">My Recipes, button press state</figcaption>
+        </figure>
+        <figure style="margin:0; border:1px solid #E0DACB; border-radius:12px; overflow:hidden; background:#F2EDE2">
+          <img src="/photos/glucose-monitoring/settings.png" alt="GluCare settings screen listing Account, Privacy and Security, Data and Information, Display and Appearance, and Log Out" loading="lazy" decoding="async" style="width:100%; height:auto; display:block" />
+          <figcaption style="font-family:var(--mono); font-size:9px; letter-spacing:0.03em; color:#8d857a; padding:10px 12px">Settings: account, privacy, and data controls</figcaption>
+        </figure>
+      </div>
+    </section>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/add-device.png"
-      alt="GluCare add-a-sensor screen with a device illustration inside a circular target and a plus button to pair"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Pairing a new sensor</figcaption>
-  </figure>
+  </div>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/scan-complete.png"
-      alt="GluCare scan complete screen showing a 102 mg/dL result with trend, time scanned, XP earned, and streak"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>A single reading, with trend and context, not just a number</figcaption>
-  </figure>
+  <div style="margin-top:56px; background:#60361F; color:#E4D3AE; padding:26px clamp(20px,5vw,56px); display:flex; flex-wrap:wrap; gap:28px; font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em">
+    <span>SYNTHETIC DATA ONLY — NO REAL PATIENT DATA AVAILABLE</span>
+    <span>mmol/L (CANADIAN CONVENTION)</span>
+    <span>SOLO DESIGNER · NO ENGINEERING PARTNER</span>
+    <span style="color:#B4C27C">PROTOTYPE — NOT YET USABILITY-TESTED</span>
+  </div>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/medication.png"
-      alt="GluCare medication screen with a weekly day picker and morning and evening medication checklists"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Medication tracking, built for the same daily habit loop</figcaption>
-  </figure>
+  <div style="max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,56px)">
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/nutrition-summary.png"
-      alt="GluCare nutrition screen with calorie, carb, protein, and fat rings and an empty meal log"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Nutrition summary before anything is logged</figcaption>
-  </figure>
+    <section style="padding:56px 0 60px">
+      <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:20px">
+        <h2 style="margin:0; font-family:'Fraunces Variable',Georgia,serif; font-weight:500; font-size:clamp(22px,3vw,30px)">Where it goes next</h2>
+        <span style="flex:1; height:1px; background:#D9D2BE"></span>
+      </div>
+      <p style="font-size:15px; line-height:1.65; color:#4A443D; max-width:64ch; margin:0">This is a prototype and it says so plainly. The honest next step is moderated usability testing with people who actually manage diabetes. Everything above is a hypothesis with good reasoning behind it, not a validated result. Knowing the difference between the two is the discipline I care most about.</p>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/food-search.png"
-      alt="GluCare breakfast food search screen with an All / My Meals / My Recipes filter and a history list"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Searching and logging a meal from history</figcaption>
-  </figure>
+      <div style="margin-top:28px; border:1px dashed #cfc8b8; border-radius:12px; padding:18px 22px">
+        <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#9a742d">What's actually validated so far</div>
+        <p style="font-size:13.5px; line-height:1.6; color:#4A443D; margin:10px 0 0"><strong>Core flow completion — qualitative.</strong> Confirmed through design walkthroughs of the authentication and logging journeys. Formal usability testing is the planned next phase, not something that's happened yet.</p>
+      </div>
+    </section>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/nutrition-logged.png"
-      alt="GluCare nutrition screen with the calorie rings filled in and photographed breakfast, lunch, dinner, and snack entries"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Nutrition summary once the day is logged</figcaption>
-  </figure>
+    <section style="padding:0 0 56px">
+      <div style="border-top:1px dashed #cfc8b8; padding-top:20px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:baseline; font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#8d857a">
+        <span>GluCare — Glucose Monitoring Prototype</span>
+        <span>Product design — case study</span>
+      </div>
+    </section>
 
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/my-recipes-empty.png"
-      alt="GluCare My Recipes empty state with a bear mascot holding an apple and a green Create a Recipe button"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>My Recipes, empty state</figcaption>
-  </figure>
-
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/my-recipes-empty-pressed.png"
-      alt="GluCare My Recipes empty state with the Create a Recipe button in its pressed state"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>My Recipes, button press state</figcaption>
-  </figure>
-
-  <figure class="project-shot">
-    <img
-      src="/photos/glucose-monitoring/settings.png"
-      alt="GluCare settings screen listing Account, Privacy and Security, Data and Information, Display and Appearance, and Log Out"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Settings: account, privacy, and data controls</figcaption>
-  </figure>
+  </div>
 </div>
-
-## What I learned
-
-The most consequential decision was the smallest one: the trend arrow. People
-who use these apps describe reacting to numbers but deciding based on
-direction. So I gave direction equal visual weight with the reading itself,
-arrow, verb, and color moving as one unit. That single change reorganized the
-whole home screen around the only question that matters: what should I do in
-the next twenty minutes?
-
-<Figure n="1.1" caption="Schematic: color paired with arrow, verb, and position, so the signal never depends on hue alone">
-<svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A glucose trend line with labeled high and low zones">
-  <line x1="20" y1="35" x2="540" y2="35" stroke="var(--line-strong)" stroke-width="1"/>
-  <line x1="20" y1="115" x2="540" y2="115" stroke="var(--line-strong)" stroke-width="1"/>
-  <text x="24" y="28" font-family="var(--mono)" font-size="9" fill="var(--text-3)">HIGH · 10.0 MMOL/L</text>
-  <text x="24" y="130" font-family="var(--mono)" font-size="9" fill="var(--text-3)">LOW · 4.0 MMOL/L</text>
-  <path d="M 30 80 Q 90 60, 140 72 T 250 58 T 360 96 T 470 70 L 530 76" fill="none" stroke="var(--violet)" stroke-width="1.8"/>
-  <circle cx="360" cy="96" r="4.5" fill="var(--pink)"/>
-  <text x="372" y="100" font-family="var(--mono)" font-size="9" fill="var(--pink)">4.8 ↓ FALLING</text>
-</svg>
-</Figure>
-
-## Where it goes next
-
-This is a prototype and it says so plainly. The honest next step is moderated
-usability testing with people who actually manage diabetes. Everything above is
-a hypothesis with good reasoning behind it, not a validated result. Knowing the
-difference between the two is the discipline I care most about.

@@ -1,0 +1,44 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A leafy houseplant in a terracotta pot beneath a marigold arch, in Planted Souls' real palette of marigold, forest green, sage, and terracotta">
+  <defs>
+    <linearGradient id="psWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f4ef"/>
+      <stop offset="100%" stop-color="#e9e6d8"/>
+    </linearGradient>
+    <radialGradient id="psGlow" cx="46%" cy="24%" r="66%">
+      <stop offset="0%" stop-color="#fffdf6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fffdf6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="psShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#23301a" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="640" height="480" fill="url(#psWall)"/>
+  <rect width="640" height="480" fill="url(#psGlow)"/>
+
+  <!-- brand arch, echoing the real site's hero photo frame -->
+  <path d="M170,420 L170,220 C170,140 236,80 320,80 C404,80 470,140 470,220 L470,420 Z" fill="#eac985"/>
+
+  <g fill="#51644d" opacity="0.5">
+    <circle cx="120" cy="110" r="2.2"/>
+    <circle cx="540" cy="140" r="2"/>
+    <circle cx="110" cy="400" r="2.2"/>
+  </g>
+
+  <!-- pot -->
+  <g transform="translate(258,300)" filter="url(#psShadow)">
+    <path d="M0,0 L124,0 L112,110 C111,120 102,128 92,128 L32,128 C22,128 13,120 12,110 Z" fill="#c4825b"/>
+    <rect x="-6" y="-16" width="136" height="20" rx="8" fill="#a8653f"/>
+  </g>
+
+  <!-- plant leaves -->
+  <g transform="translate(320,270)" filter="url(#psShadow)">
+    <path d="M0,0 C-10,-70 -70,-96 -110,-92 C-100,-44 -54,-6 0,0 Z" fill="#3f5c33"/>
+    <path d="M0,0 C10,-84 74,-118 118,-110 C110,-52 60,-8 0,0 Z" fill="#51644d"/>
+    <path d="M0,0 C-4,-52 -30,-84 -58,-96 C-56,-56 -34,-16 0,0 Z" fill="#23301a"/>
+    <path d="M0,0 C6,-60 34,-92 62,-102 C60,-58 36,-14 0,0 Z" fill="#6b8a5f"/>
+  </g>
+
+  <text x="320" y="430" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="10" letter-spacing="2" fill="#4a4a3a">PLANTED SOULS</text>
+  <text x="320" y="448" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="8.5" letter-spacing="1.4" fill="#51644d">BRAND, EXTRACTED INTO A WEBSITE</text>
+</svg>

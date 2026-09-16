@@ -1,0 +1,48 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A pair of gold hoop earrings on a velvet ledger card stamped Hush Jewelry, in the brand's real onyx, gold-foil, and burgundy colours">
+  <defs>
+    <linearGradient id="hjWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f4ec"/>
+      <stop offset="100%" stop-color="#ece3cd"/>
+    </linearGradient>
+    <radialGradient id="hjGlow" cx="46%" cy="26%" r="62%">
+      <stop offset="0%" stop-color="#fffdf6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fffdf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hjHoop" cx="35%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#f4e3b2"/>
+      <stop offset="100%" stop-color="#8a6320"/>
+    </radialGradient>
+    <filter id="hjShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#19181b" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="640" height="480" fill="url(#hjWall)"/>
+  <rect width="640" height="480" fill="url(#hjGlow)"/>
+  <g fill="#7a0a1f" opacity="0.5">
+    <circle cx="100" cy="90" r="2.2"/>
+    <circle cx="540" cy="130" r="2"/>
+    <circle cx="120" cy="392" r="2.2"/>
+  </g>
+
+  <!-- ledger card -->
+  <g transform="translate(180,90) rotate(-3 140 150)" filter="url(#hjShadow)">
+    <rect x="0" y="0" width="280" height="300" rx="10" fill="#19181b" stroke="#c3a87a" stroke-width="1.6"/>
+    <text x="140" y="40" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="10" letter-spacing="3" fill="#c3a87a">HUSH JEWELRY</text>
+    <line x1="30" y1="56" x2="250" y2="56" stroke="#7a0a1f" stroke-width="1.4"/>
+    <line x1="30" y1="62" x2="250" y2="62" stroke="#c3a87a" stroke-width="0.8"/>
+
+    <!-- hoop earrings -->
+    <g transform="translate(96,168)" filter="url(#hjShadow)">
+      <circle cx="0" cy="0" r="42" fill="none" stroke="url(#hjHoop)" stroke-width="9"/>
+    </g>
+    <g transform="translate(184,168)" filter="url(#hjShadow)">
+      <circle cx="0" cy="0" r="42" fill="none" stroke="url(#hjHoop)" stroke-width="9"/>
+    </g>
+
+    <text x="140" y="264" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="8.5" letter-spacing="1.4" fill="#e7dbc0">CHUNKY GOLD HOOPS</text>
+  </g>
+
+  <text x="320" y="424" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="10" letter-spacing="2" fill="#6b6259">HUSH JEWELS</text>
+  <text x="320" y="442" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="8.5" letter-spacing="1.4" fill="#7a0a1f">FOUR YEARS, ONE LEDGER</text>
+</svg>

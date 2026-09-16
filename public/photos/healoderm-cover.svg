@@ -1,0 +1,51 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A skincare dropper bottle with a single falling drop, in HealoDerm's own live-site colours of ink, cream, terracotta, and mint">
+  <defs>
+    <linearGradient id="hdWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbf7ee"/>
+      <stop offset="100%" stop-color="#f2e8dc"/>
+    </linearGradient>
+    <radialGradient id="hdGlow" cx="42%" cy="26%" r="62%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hdGlass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d2907e" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#c07a68" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="hdShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#121212" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="640" height="480" fill="url(#hdWall)"/>
+  <rect width="640" height="480" fill="url(#hdGlow)"/>
+
+  <g fill="#e6f1e7">
+    <circle cx="500" cy="110" r="34" opacity="0.9"/>
+    <circle cx="120" cy="360" r="22" opacity="0.8"/>
+  </g>
+  <g fill="#121212" opacity="0.18">
+    <circle cx="86" cy="96" r="2.2"/>
+    <circle cx="548" cy="380" r="2"/>
+  </g>
+
+  <!-- bottle -->
+  <g transform="translate(258,96)" filter="url(#hdShadow)">
+    <rect x="30" y="0" width="60" height="34" rx="6" fill="#121212"/>
+    <rect x="42" y="-16" width="36" height="20" rx="4" fill="#2b2622"/>
+    <path d="M18,34 L102,34 L96,240 C95,258 80,272 62,272 L58,272 C40,272 25,258 24,240 Z" fill="url(#hdGlass)" stroke="#8a5445" stroke-width="1.4"/>
+    <rect x="30" y="110" width="60" height="70" rx="6" fill="#fbf7ee" opacity="0.92"/>
+    <text x="60" y="140" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="9" letter-spacing="1.6" fill="#2b2622">HEALO</text>
+    <text x="60" y="154" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="9" letter-spacing="1.6" fill="#2b2622">DERM</text>
+    <line x1="42" y1="166" x2="78" y2="166" stroke="#c9c2b2" stroke-width="1"/>
+  </g>
+
+  <!-- falling drop -->
+  <g transform="translate(318,300)" filter="url(#hdShadow)">
+    <path d="M0,-34 C13,-14 22,0 22,13 C22,27 13,37 0,37 C-13,37 -22,27 -22,13 C-22,0 -13,-14 0,-34 Z" fill="#d2907e"/>
+    <ellipse cx="-6" cy="6" rx="4" ry="8" fill="#f3c9bd" opacity="0.8"/>
+  </g>
+
+  <text x="320" y="424" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="10" letter-spacing="2" fill="#6b6259">HEALODERM</text>
+  <text x="320" y="442" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="8.5" letter-spacing="1.4" fill="#9a742d">CREATOR DROP &#183; SKINCARE</text>
+</svg>

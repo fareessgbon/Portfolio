@@ -1,0 +1,70 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A clipboard runbook beside a four-step pipeline diagram reading Plan, Run, Measure, Apply, WECS Community Operations">
+  <defs>
+    <linearGradient id="wcWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#faf9f6"/>
+      <stop offset="100%" stop-color="#efece1"/>
+    </linearGradient>
+    <radialGradient id="wcGlow" cx="42%" cy="26%" r="62%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="wcShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#1a1712" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="640" height="480" fill="url(#wcWall)"/>
+  <rect width="640" height="480" fill="url(#wcGlow)"/>
+  <g fill="#9a742d" opacity="0.4">
+    <circle cx="96" cy="90" r="2.2"/>
+    <circle cx="540" cy="380" r="2"/>
+  </g>
+
+  <!-- clipboard -->
+  <g transform="translate(96,110)" filter="url(#wcShadow)">
+    <rect x="0" y="10" width="180" height="248" rx="10" fill="#fdfbf6" stroke="#e0dacb" stroke-width="1.6"/>
+    <rect x="66" y="0" width="48" height="20" rx="6" fill="#9a742d"/>
+    <g stroke="#e0dacb" stroke-width="1.2">
+      <line x1="20" y1="52" x2="160" y2="52"/>
+      <line x1="20" y1="72" x2="160" y2="72"/>
+      <line x1="20" y1="92" x2="120" y2="92"/>
+    </g>
+    <circle cx="30" cy="136" r="9" fill="none" stroke="#9a742d" stroke-width="2"/>
+    <path d="M25,136 l4,4 8,-9" fill="none" stroke="#9a742d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="48" y1="136" x2="160" y2="136" stroke="#cfc7b4" stroke-width="1.4"/>
+    <circle cx="30" cy="168" r="9" fill="none" stroke="#9a742d" stroke-width="2"/>
+    <path d="M25,168 l4,4 8,-9" fill="none" stroke="#9a742d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="48" y1="168" x2="160" y2="168" stroke="#cfc7b4" stroke-width="1.4"/>
+    <circle cx="30" cy="200" r="9" fill="none" stroke="#cfc7b4" stroke-width="2"/>
+    <line x1="48" y1="200" x2="140" y2="200" stroke="#cfc7b4" stroke-width="1.4"/>
+  </g>
+
+  <!-- pipeline -->
+  <g font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="9" letter-spacing="1.2">
+    <g transform="translate(340,150)">
+      <circle cx="0" cy="0" r="26" fill="#eeebe3" stroke="#9a742d" stroke-width="1.6"/>
+      <text x="0" y="4" text-anchor="middle" fill="#3a332c">PLAN</text>
+    </g>
+    <g transform="translate(430,210)">
+      <circle cx="0" cy="0" r="26" fill="#eeebe3" stroke="#9a742d" stroke-width="1.6"/>
+      <text x="0" y="4" text-anchor="middle" fill="#3a332c">RUN</text>
+    </g>
+    <g transform="translate(400,300)">
+      <circle cx="0" cy="0" r="26" fill="#eeebe3" stroke="#9a742d" stroke-width="1.6"/>
+      <text x="0" y="4" text-anchor="middle" fill="#3a332c">MEASURE</text>
+    </g>
+    <g transform="translate(300,300)">
+      <circle cx="0" cy="0" r="26" fill="#2b2622" stroke="#9a742d" stroke-width="1.6"/>
+      <text x="0" y="4" text-anchor="middle" fill="#f4efe0">APPLY</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#c9c2b2" stroke-width="1.6" stroke-dasharray="2 6">
+    <path d="M362,166 L412,198"/>
+    <path d="M436,236 L410,278"/>
+    <path d="M376,302 L328,302"/>
+    <path d="M292,282 C270,240 280,190 316,168"/>
+  </g>
+
+  <text x="320" y="430" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="10" letter-spacing="2" fill="#6b6259">WECS COMMUNITY OPS</text>
+  <text x="320" y="448" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="8.5" letter-spacing="1.4" fill="#9a742d">THE PIPELINE IS THE PRODUCT</text>
+</svg>

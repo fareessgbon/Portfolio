@@ -372,8 +372,8 @@ html[data-mode='dark'] .cover-glow { mix-blend-mode: screen; background: radial-
 dialog { border: 0; padding: 0; background: none; color: var(--ink); max-width: none; max-height: none; }
 dialog::backdrop { background: rgba(16, 13, 8, 0.62); backdrop-filter: blur(6px); }
 
-.post-modal { width: min(1040px, 94vw); max-height: 92vh; margin: 4vh auto; background: var(--card); border: 1px solid var(--border); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: 1.05fr 1fr; }
-@media (max-width: 860px) { .post-modal { grid-template-columns: 1fr; max-height: 90vh; } }
+.post-modal { width: 100vw; height: 100vh; max-height: 100vh; margin: 0; background: var(--card); border: 0; border-radius: 0; overflow: hidden; box-shadow: none; display: grid; grid-template-columns: 1.05fr 1fr; }
+@media (max-width: 860px) { .post-modal { grid-template-columns: 1fr; grid-template-rows: auto 1fr; } }
 .post-modal .pm-visual { background: var(--surface); position: relative; min-height: 220px; }
 .post-modal .pm-visual svg, .post-modal .pm-visual img { width: 100%; height: 100%; object-fit: cover; }
 .post-modal .pm-scroll { overflow-y: auto; padding: clamp(1.3rem, 3vw, 2.2rem); }
@@ -575,3 +575,352 @@ dialog::backdrop { background: rgba(16, 13, 8, 0.62); backdrop-filter: blur(6px)
     grid-column: auto;
   }
 }
+
+/* ————— Hush Jewels: "Boutique Ledger" theme ————— */
+/* Cream, near-black, burgundy and tan — the brand's real palette from its
+   logo sheet — because the case study's own throughline is "the record
+   wins": headings read like hallmark stamps, cards like a jeweler's ledger. */
+.theme-hush {
+  /* This page's paper-and-ink material look is fixed regardless of the
+     site's light/dark toggle (like HealoDerm's fullBleed page), so every
+     color token .prose relies on is pinned locally — otherwise dark mode
+     flips --ink to a light color while this background stays light paper,
+     making body text nearly invisible. */
+  --ink: #19181b;
+  --ink-2: #4a4238;
+  --ink-3: #8a8072;
+  --border: #e0d4b3;
+  --border-2: #c3a87a;
+  --surface: #efe7d5;
+  --card: #fffdf7;
+  --gold: #7a0a1f;
+  --gold-2: #c3a87a;
+  --grad: linear-gradient(100deg, #4a0714, #7a0a1f 45%, #c3a87a 80%, #4a0714);
+  color: var(--ink);
+  background: #f8f4ec;
+  background-image: repeating-linear-gradient(180deg, rgba(122,10,31,0.05) 0px, rgba(122,10,31,0.05) 1px, transparent 1px, transparent 27px);
+  border-radius: 14px;
+  padding: 1.8rem clamp(1.6rem, 5vw, 4rem);
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.theme-hush .hush-hero { position: relative; padding-bottom: 1.3rem; margin-bottom: 0.4rem; }
+.theme-hush .hush-hallmark {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: #19181b; color: #e7dbc0; border: 1px solid #c3a87a;
+  border-radius: 999px; padding: 0.5rem 1.15rem 0.5rem 0.6rem; margin: 0;
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.theme-hush .hush-monogram { display: inline-block; vertical-align: middle; width: 20px; height: 26px; flex-shrink: 0; color: #c3a87a; margin-right: 0.1rem; }
+.theme-hush .hush-monogram text { font-size: 10px; }
+.theme-hush .hush-hallmark p { display: inline; margin: 0; white-space: nowrap; }
+.theme-hush .hush-tagline { font-family: var(--serif); font-style: italic; font-size: 1rem; color: #7a0a1f; margin: 0.7rem 0 0; letter-spacing: 0.01em; }
+.theme-hush .hush-ruler { margin-top: 1.4rem; height: 8px; background-image: repeating-linear-gradient(90deg, #7a0a1f 0px, #7a0a1f 1px, transparent 1px, transparent 11px); opacity: 0.6; }
+
+.hush-tag { position: absolute; top: -6px; right: 4px; transform: rotate(-6deg); text-align: center; }
+.hush-tag .ht-grommet { width: 7px; height: 7px; border-radius: 50%; background: #19181b; border: 2px solid #c3a87a; margin: 0 auto 2px; }
+.hush-tag .ht-string { width: 1px; height: 16px; background: #c3a87a; margin: 0 auto; }
+.hush-tag .ht-card { width: 168px; background: #efe2c3; border: 1px solid #c3a87a; border-radius: 6px; padding: 0.7rem 0.85rem 0.8rem; box-shadow: 0 14px 24px -12px rgba(25,24,27,0.4); text-align: left; }
+.hush-tag .ht-label { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: #7a0a1f; padding-bottom: 0.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(122,10,31,0.25); }
+.hush-tag .ht-row { display: flex; justify-content: space-between; font-size: 0.72rem; margin-top: 0.35rem; color: #3a2f1e; }
+.hush-tag .ht-row b { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; }
+@media (max-width: 640px) { .hush-tag { position: static; transform: none; margin: 1rem 0 0; } .hush-tag .ht-card { width: 100%; max-width: 260px; } }
+
+.theme-hush h2::after { width: 44px; height: 6px; background: none; border-top: 1.5px solid #7a0a1f; border-bottom: 1.5px solid #c3a87a; }
+.theme-hush blockquote { background: #19181b; color: #e7dbc0; border-left: 3px solid #7a0a1f; }
+.theme-hush .callout { background: #19181b; color: #e7dbc0; border-color: #2c2924; }
+.theme-hush .callout::before { background: linear-gradient(180deg, #7a0a1f, #c3a87a); }
+.theme-hush .callout .k { color: #c3a87a; }
+.theme-hush .stat { background: #19181b; border-color: #2c2924; }
+.theme-hush .stat .m, .theme-hush .stat .b { color: #b0a794; }
+.theme-hush .stat .b::before { color: #c3a87a; }
+
+.hush-systems { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 1rem; margin: 1.4rem 0 1.8rem; }
+.hush-system { background: #19181b; border: 1px solid #2c2924; border-radius: 14px; padding: 1.2rem 1.3rem 1.35rem; }
+.hush-system svg { width: 20px; height: 20px; stroke: #c3a87a; fill: none; stroke-width: 1.4; }
+.hush-system h3 { font-family: var(--serif); font-size: 1.08rem; color: #e7dbc0; margin: 0.7rem 0 0.5rem; font-weight: 540; }
+.hush-system p { font-size: 0.86rem; line-height: 1.55; color: #c9bda0; margin: 0; }
+
+.hush-receipts { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0 0 1.8rem; }
+.hush-receipt { background: #fffdf7; border: 1px solid #ded0ac; padding: 0.85rem 1.1rem 0.7rem; box-shadow: 0 8px 16px -10px rgba(25,24,27,0.3); clip-path: polygon(0 0,100% 0,100% 90%,91% 100%,82% 90%,73% 100%,64% 90%,55% 100%,46% 90%,37% 100%,28% 90%,19% 100%,10% 90%,0 100%); }
+.hush-receipt:nth-child(1) { transform: rotate(-2.5deg); }
+.hush-receipt:nth-child(2) { transform: rotate(1.5deg); }
+.hush-receipt:nth-child(3) { transform: rotate(-1deg); }
+.hush-receipt .v { display: block; font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: #19181b; }
+.hush-receipt .l { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: #7a0a1f; margin-top: 0.15rem; display: block; }
+
+.hush-certificate { display: flex; gap: 1.1rem; align-items: flex-start; background: #19181b; border: 1px solid #7a0a1f; border-radius: 14px; padding: 1.3rem 1.5rem; margin: 1.4rem 0; }
+.hush-certificate svg { width: 30px; height: 30px; stroke: #c3a87a; fill: none; stroke-width: 1.2; flex-shrink: 0; margin-top: 0.15rem; }
+.hush-certificate .hc-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: #c3a87a; display: block; margin-bottom: 0.5rem; }
+.hush-certificate p { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.5; color: #e7dbc0; margin: 0; }
+
+.project-gallery--hush .project-shot, .theme-hush .project-gallery .project-shot {
+  background: #19181b; border: 1px solid #2c2924; padding: 10px; position: relative;
+}
+.project-gallery--hush .project-shot::before, .theme-hush .project-gallery .project-shot::before {
+  content: ''; position: absolute; inset: 6px; border: 1px solid #c3a87a; opacity: 0.5; pointer-events: none; border-radius: 10px;
+}
+.project-gallery--hush .project-shot img, .theme-hush .project-gallery .project-shot img { border-radius: 6px; }
+.project-gallery--hush .project-shot figcaption, .theme-hush .project-gallery .project-shot figcaption { color: #c3a87a; }
+
+/* ————— Kerecis Clinical Courier: "field newsletter" theme ————— */
+/* The case study is about designing a newsletter, so the page borrows the
+   newsletter's own nameplate-and-proof-sheet vocabulary, in Kerecis's marine
+   palette rather than the site's gold. */
+.theme-kerecis { --grad: linear-gradient(100deg, #0b4a4a, #2f8f86 45%, #bfe3de 72%, #0b4a4a); }
+.theme-kerecis h2::after { background: none; height: 5px; border-top: 2px solid #2f8f86; border-bottom: 1px solid #bfe3de; }
+.theme-kerecis blockquote { border-left: 3px solid #2f8f86; }
+.theme-kerecis .callout::before { background: linear-gradient(180deg, #2f8f86, #0b4a4a); }
+.theme-kerecis .callout .k { color: #1f6e66; }
+.theme-kerecis .stat .v { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.theme-kerecis .stat .b::before { color: #1f6e66; }
+
+.kerecis-nameplate { position: relative; margin: 0.6rem 0 1.4rem; padding: 0.2rem 0.3rem; }
+.kerecis-nameplate .kn-rule { height: 5px; border-top: 2px solid #0b4a4a; border-bottom: 1px solid #2f8f86; }
+.kerecis-nameplate .kn-rule + .kn-rule { margin-top: 6px; height: 1px; border: 0; border-top: 1px solid #2f8f86; }
+.kerecis-nameplate .kn-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem 1rem; padding: 0.6rem 0; }
+.kerecis-nameplate .kn-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 540; letter-spacing: -0.01em; color: var(--ink); }
+.kerecis-nameplate .kn-meta { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #1f6e66; }
+
+.kerecis-nameplate .kn-stamp {
+  position: absolute; top: -20px; right: -6px; transform: rotate(-11deg);
+  width: 84px; height: 84px; border-radius: 50%; border: 2px double #a5432f;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  opacity: 0.82; background: color-mix(in srgb, var(--card) 55%, transparent); pointer-events: none;
+}
+.kerecis-nameplate .kn-stamp span { font-family: var(--mono); font-size: 6.8px; letter-spacing: 0.07em; color: #a5432f; line-height: 1.5; }
+.kerecis-nameplate .kn-crop { position: absolute; width: 13px; height: 13px; pointer-events: none; }
+.kerecis-nameplate .kn-crop::before, .kerecis-nameplate .kn-crop::after { content: ''; position: absolute; background: #4a625f; opacity: 0.55; }
+.kerecis-nameplate .kn-crop::before { left: 6px; top: 0; width: 1px; height: 13px; }
+.kerecis-nameplate .kn-crop::after { top: 6px; left: 0; width: 13px; height: 1px; }
+.kerecis-nameplate .kn-crop.tl { top: -9px; left: -9px; }
+.kerecis-nameplate .kn-crop.br { bottom: -9px; right: -9px; }
+@media (max-width: 560px) { .kerecis-nameplate .kn-stamp { width: 64px; height: 64px; top: -14px; right: -4px; } .kerecis-nameplate .kn-stamp span { font-size: 5.6px; } }
+
+.kerecis-specs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.8rem; }
+.kerecis-specs span { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.05em; color: var(--ink-2); border: 1px solid #bfe3de; border-radius: 999px; padding: 0.32rem 0.75rem; }
+.kerecis-specs span b { color: #1f6e66; font-weight: 600; }
+
+.kerecis-loupe-wrap { text-align: center; margin: 1.8rem 0; }
+.kerecis-loupe {
+  position: relative; width: 176px; height: 176px; border-radius: 50%; margin: 0 auto;
+  border: 9px solid #cfe0dd; box-shadow: inset 0 0 0 1px #fff, 0 22px 40px -18px rgba(15,42,40,0.35);
+  background-image: url('/photos/kerecis-clinical-courier/01-header-number-of-the-week.png');
+  background-repeat: no-repeat; background-size: 2251px 2738px; background-position: -342px -1887px;
+}
+.kerecis-loupe-wrap .ll { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); margin-top: 0.9rem; }
+
+.kerecis-specbar { display: flex; flex-wrap: wrap; gap: 2.2rem; margin: 1.8rem 0; padding-top: 1.4rem; border-top: 1px solid var(--border); }
+.kerecis-specbar .ks-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.kerecis-specbar .ks-label { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+.kerecis-specbar .ks-swatches { display: flex; gap: 0.4rem; }
+.kerecis-specbar .ks-swatches div { width: 26px; height: 26px; border-radius: 5px; }
+.kerecis-specbar .ks-type { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.78rem; color: var(--ink-2); }
+.kerecis-specbar .ks-type b { color: var(--ink); font-weight: 600; }
+
+.kerecis-toc { margin: 1.4rem 0 1.8rem; }
+.kt-item { display: grid; grid-template-columns: 2.6rem minmax(0,1fr); gap: 0.9rem; padding: 0.9rem 0; position: relative; }
+.kt-item:not(:last-child) { border-bottom: 1px dashed var(--border); }
+.kt-num { font-family: var(--mono); font-size: 0.78rem; font-weight: 600; color: #fff; background: #1f6e66; border-radius: 8px; width: 2rem; height: 2rem; display: grid; place-items: center; }
+.kt-item h3 { font-size: 1.02rem; margin: 0 0 0.35rem; }
+.kt-item p { font-size: 0.87rem; line-height: 1.55; color: var(--ink-2); margin: 0; }
+
+.project-gallery--kerecis { counter-reset: kerecis-proof; }
+.project-gallery--kerecis .project-shot { position: relative; background: #f4f9f8; border-color: #bfe3de; counter-increment: kerecis-proof; }
+.project-gallery--kerecis .project-shot::before {
+  content: 'proof ' counter(kerecis-proof, decimal-leading-zero) ' of 3';
+  position: absolute; top: 0.6rem; right: 0.85rem; font-family: var(--mono); font-size: 0.56rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #1f6e66; background: #fff;
+  border: 1px solid #bfe3de; border-radius: 999px; padding: 0.18rem 0.6rem; z-index: 2;
+}
+.project-gallery--kerecis .project-shot figcaption { color: #1f6e66; }
+
+/* ————— Planted Souls: "The Vision Board" theme ————— */
+/* Marigold, forest green, sage, terracotta, cream — sampled straight from the
+   real site screenshots, not invented. The case study's own throughline is
+   extracting a brand from the founder's head, so the page borrows the
+   brand's own arch motif (from its hero photo and pill buttons) and treats
+   its process like the vision board that actually drove it: pinned
+   reference cards and a swatch strip pulled off the real screens. */
+.theme-planted {
+  --ink: #23301a;
+  --ink-2: #55604a;
+  --ink-3: #8b9077;
+  --border: #e6ddc3;
+  --border-2: #cabf98;
+  --surface: #f4f4ef;
+  --card: #fffdf7;
+  --gold: #51644d;
+  --gold-2: #c4825b;
+  --grad: linear-gradient(100deg, #51644d, #eac985 55%, #c4825b 100%);
+  color: var(--ink);
+}
+.theme-planted .abstract { background: var(--surface); border-color: var(--border); }
+.theme-planted blockquote { border-left: 3px solid #51644d; }
+.theme-planted .callout { background: var(--surface); border-color: var(--border); }
+.theme-planted .callout::before { background: linear-gradient(180deg, #51644d, #eac985); }
+.theme-planted .callout .k { color: #51644d; }
+
+.planted-badge {
+  display: inline-flex; align-items: center; gap: 0.55rem; background: #eac985; color: #23301a;
+  border-radius: 999px 999px 8px 8px; padding: 0.5rem 1.1rem 0.5rem 0.7rem; margin: 0 0 1.6rem;
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.planted-badge svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+.planted-swatches { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.2rem 0 0.6rem; }
+.planted-swatch { text-align: center; }
+.planted-swatch .chip { width: 46px; height: 60px; border-radius: 30px 30px 6px 6px; border: 1px solid rgba(35,48,26,0.12); box-shadow: 0 6px 14px -8px rgba(35,48,26,0.35); }
+.planted-swatch .lbl { display: block; margin-top: 0.5rem; font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.06em; color: var(--ink-2); }
+.planted-swatch-note { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.04em; color: var(--ink-3); margin: 0.7rem 0 1.8rem; }
+
+.planted-process { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1.4rem; margin: 1.6rem 0 1.8rem; }
+.planted-card { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 10px 10px 8px 8px; padding: 1.3rem 1.2rem 1.2rem; box-shadow: 0 14px 26px -18px rgba(35,48,26,0.35); }
+.planted-card:nth-child(1) { transform: rotate(-1.6deg); }
+.planted-card:nth-child(2) { transform: rotate(1deg); margin-top: 0.6rem; }
+.planted-card:nth-child(3) { transform: rotate(-0.6deg); }
+.planted-card::before { content: ''; position: absolute; top: -7px; left: 50%; margin-left: -6px; width: 12px; height: 12px; border-radius: 50%; background: #c4825b; box-shadow: 0 3px 6px -2px rgba(35,48,26,0.5); }
+.planted-card .pc-step { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: #c4825b; }
+.planted-card h3 { font-family: var(--serif); font-size: 1.1rem; margin: 0.5rem 0 0.45rem; font-weight: 540; color: var(--ink); }
+.planted-card p { font-size: 0.85rem; line-height: 1.55; color: var(--ink-2); margin: 0; }
+
+.project-gallery--planted .project-shot { background: var(--surface); border-color: var(--border); }
+.project-gallery--planted .project-shot img { border-radius: 60px 60px 4px 4px; }
+.project-gallery--planted .project-shot { padding: 10px 10px 0; }
+.project-gallery--planted .project-shot figcaption { color: #51644d; padding-top: 0.7rem; }
+
+/* ————— Black Wings: "The Workbook Branch" theme ————— */
+/* Ruled notebook paper, a rotated chapter tab, and a branching decision-tree
+   diagram — because the project's own finding is that people engage more
+   with a branching story than with advice, so the page borrows that shape. */
+.theme-blackwings {
+  --ink: #241c14;
+  --ink-2: #4a3b29;
+  --ink-3: #8a8072;
+  --border: #dcd2bb;
+  --border-2: #c3b79c;
+  --surface: #f3efe0;
+  --card: #fbf6ea;
+  --gold: #8a6a28;
+  --gold-2: #c3b79c;
+  --grad: linear-gradient(100deg, #241c14, #8a6a28 55%, #c3b79c 100%);
+  color: var(--ink);
+  background: #fbf6ea;
+  background-image: repeating-linear-gradient(180deg, rgba(122,146,178,0.16) 0px, rgba(122,146,178,0.16) 1px, transparent 1px, transparent 31px);
+  border-radius: 4px;
+  padding: 1.6rem 1.8rem;
+}
+.theme-blackwings blockquote { border-left: 3px solid #8a6a28; }
+.theme-blackwings .callout { background: var(--card); border: 1px solid var(--border); border-top: 3px double var(--ink); border-radius: 2px; }
+.theme-blackwings .callout::before { background: linear-gradient(180deg, #8a6a28, #241c14); }
+.theme-blackwings .callout .k { color: #8a6a28; }
+
+.bw-tab {
+  display: inline-flex; align-items: center; gap: 0.5rem; background: #241c14; color: #f6efdf;
+  padding: 0.5rem 1rem; margin: 0 0 1.6rem; border-radius: 2px;
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.bw-tree { margin: 1.6rem 0; background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1.2rem 1.3rem; }
+.bw-tree svg { width: 100%; height: auto; display: block; }
+.bw-tree figcaption { margin-top: 0.7rem; font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+
+/* ————— Drink Overflow: "The Route Sheet" theme ————— */
+/* A winding route graphic behind the page, because the campaign's own
+   creative concept was "all roads lead to Mango Tree" — real stated
+   palette of soft neutral + green, yellow and pink. */
+.theme-overflow {
+  --ink: #241c14;
+  --ink-2: #3b3a2c;
+  --ink-3: #7c8a5c;
+  --border: #dcd2bb;
+  --border-2: #c9c4ad;
+  --surface: #f4f1e6;
+  --card: #fffdf6;
+  --gold: #7c8a5c;
+  --gold-2: #e9c84a;
+  --grad: linear-gradient(100deg, #7c8a5c, #e9c84a 50%, #b76a80 100%);
+  color: var(--ink);
+  position: relative;
+  isolation: isolate;
+  background: #f4f1e6;
+  border-radius: 4px;
+  padding: 1.6rem 1.8rem;
+}
+.theme-overflow .of-route { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.9; }
+.theme-overflow blockquote { border-left: 3px solid #e9c84a; }
+.theme-overflow .callout { background: var(--card); border-color: var(--border); }
+.theme-overflow .callout::before { background: linear-gradient(180deg, #7c8a5c, #e9c84a); }
+.theme-overflow .callout .k { color: #7c8a5c; }
+
+.of-tagline { font-family: var(--serif); font-size: 1.5rem; font-weight: 540; line-height: 1.2; margin: 0 0 1.6rem; max-width: 20ch; }
+.of-tagline span { font-style: italic; background: linear-gradient(to top, #f4cbd8 0 32%, transparent 32%); padding: 0 0.05em; }
+
+.of-four { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 0.8rem; margin: 1.4rem 0 1.8rem; }
+.of-four div { background: var(--card); border: 1.5px solid var(--ink); padding: 0.9rem 1rem; }
+.of-four div:nth-child(1) { transform: rotate(-1.2deg); }
+.of-four div:nth-child(2) { transform: rotate(0.8deg); margin-top: 0.5rem; }
+.of-four div:nth-child(3) { transform: rotate(-0.6deg); }
+.of-four div:nth-child(4) { transform: rotate(1deg); margin-top: 0.4rem; }
+.of-four .ofq { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: #7c8a5c; display: block; margin-bottom: 0.4rem; }
+
+.of-drinks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 1rem; margin: 1.4rem 0 1.8rem; }
+.of-drink { padding: 1.3rem 1.2rem; min-height: 120px; display: flex; flex-direction: column; gap: 0.7rem; }
+.of-drink .dot { width: 12px; height: 12px; border-radius: 50%; }
+.of-drink .name { font-family: var(--serif); font-size: 1.5rem; line-height: 1.05; }
+.of-drink:nth-child(1) { background: #dce6c9; }
+.of-drink:nth-child(1) .dot { background: #7c8a5c; }
+.of-drink:nth-child(2) { background: #f6e3a8; margin-top: 0.8rem; }
+.of-drink:nth-child(2) .dot { background: #b08f1e; }
+.of-drink:nth-child(3) { background: #f7d5de; margin-top: 1.4rem; }
+.of-drink:nth-child(3) .dot { background: #b76a80; }
+
+.project-gallery--overflow .project-shot { background: var(--card); border-color: var(--ink); border-width: 1.5px; }
+.project-gallery--overflow .project-shot figcaption { color: #7c8a5c; }
+
+/* ————— WECS Community Ops: "The Runbook" theme ————— */
+/* Graph paper and a closed operational loop, because the project's own
+   throughline is quiet, repeatable systems rather than visuals. */
+.theme-wecs {
+  --ink: #241c14;
+  --ink-2: #4a3b29;
+  --ink-3: #8a8072;
+  --border: #dcd2bb;
+  --border-2: #c3b79c;
+  --surface: #fffdf5;
+  --card: #fffdf5;
+  --gold: #8a6a28;
+  --gold-2: #c3b79c;
+  --grad: linear-gradient(100deg, #241c14, #8a6a28 100%);
+  color: var(--ink);
+  background: #f8f4e9;
+  background-image: repeating-linear-gradient(0deg, rgba(36,28,20,0.05) 0 1px, transparent 1px 28px), repeating-linear-gradient(90deg, rgba(36,28,20,0.05) 0 1px, transparent 1px 28px);
+  border-radius: 4px;
+  padding: 1.6rem 1.8rem;
+}
+.theme-wecs blockquote { border-left: 3px solid #8a6a28; }
+.theme-wecs .callout { background: var(--card); border-color: var(--ink); }
+.theme-wecs .callout::before { background: linear-gradient(180deg, #8a6a28, #241c14); }
+.theme-wecs .callout .k { color: #8a6a28; }
+
+.wecs-loop { max-width: 260px; margin: 1.6rem auto; background: var(--card); border: 1px solid var(--ink); padding: 1.2rem; }
+.wecs-loop svg { width: 100%; height: auto; display: block; }
+.wecs-loop .wl-label { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8a6a28; margin-bottom: 0.8rem; }
+
+.wecs-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 1rem; margin: 1.6rem 0 1.8rem; }
+.wecs-col { background: var(--card); border: 1px solid var(--ink); border-top: 6px solid var(--ink); padding: 1.2rem 1.1rem; display: flex; flex-direction: column; gap: 0.6rem; min-height: 180px; }
+.wecs-col:last-child { background: #f2e3c4; border-top-color: #8a6a28; }
+.wecs-col .wc-step { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8a6a28; }
+.wecs-col h3 { font-family: var(--serif); font-size: 1.25rem; line-height: 1.1; margin: 0; font-weight: 540; }
+.wecs-col p { font-size: 0.83rem; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.wecs-col .wc-tool { margin-top: auto; padding-top: 0.6rem; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--ink-2); }
+
+.wecs-crafts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.8rem; }
+.wecs-crafts span { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.05em; color: var(--ink-2); border: 1px solid var(--border-2); border-radius: 999px; padding: 0.35rem 0.85rem; background: var(--card); }
+
+.wecs-attendance { display: flex; align-items: flex-end; gap: 2.4rem; margin: 1.6rem 0 1.8rem; padding: 1.4rem 1.5rem 1.2rem; background: var(--card); border: 1px solid var(--ink); }
+.wecs-attendance .wa-bar { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.wecs-attendance .wa-fill { width: 46px; border-radius: 2px 2px 0 0; }
+.wecs-attendance .wa-bar:nth-child(1) .wa-fill { background: var(--border-2); height: 70px; }
+.wecs-attendance .wa-bar:nth-child(2) .wa-fill { background: #8a6a28; height: 130px; }
+.wecs-attendance .wa-n { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; }
+.wecs-attendance .wa-l { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); text-align: center; max-width: 9ch; }
